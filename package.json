@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "yarn build && gh-pages -d build && git add . && git commit -m 'Update' && git push origin dev && git fetch && git checkout master && git reset --hard origin/gh-pages && git push origin master -f && git checkout dev && yarn"
+    "deploy": "yarn build && gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
