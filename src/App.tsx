@@ -26,8 +26,33 @@ const App: FC = () => (
           text='Seattle'
           url='https://www.google.com/maps/place/Seattle,+WA/@47.6129432,-122.4821475,11z/data=!3m1!4b1!4m5!3m4!1s0x5490102c93e83355:0x102565466944d59a!8m2!3d47.6062095!4d-122.3320708'
           isPrecededBySpace
-        />
-        .
+        />.
+      </p>
+      <p>
+        Here is my
+        <Link
+          text='resume'
+          url='https://davekwiatkowski.com/resume/cv.pdf'
+          isPrecededBySpace
+        />,
+        here is some of my code on
+        <Link
+          text='CodePen'
+          url='https://codepen.io/davekwiatkowski'
+          isPrecededBySpace
+        />,
+        here is some more of my code on
+          <Link
+          text='Github'
+          url='https://github.com/davekwiatkowski'
+          isPrecededBySpace
+        />,
+        and here are my articles on
+        <Link
+          text='Medium'
+          url='https://medium.com/@davekwiatkowski'
+          isPrecededBySpace
+        />.
       </p>
       <p>
         Please
@@ -42,15 +67,7 @@ const App: FC = () => (
           text='LinkedIn'
           url='https://linkedin.com/in/davekwiatkowski'
           isPrecededBySpace
-        />
-        .
-        Also, here is my
-        <Link
-          text='resume'
-          url='https://davekwiatkowski.com/resume/cv.pdf'
-          isPrecededBySpace
-        />
-        .
+        />.
       </p>
       <p>- Dave</p>
     </div>
