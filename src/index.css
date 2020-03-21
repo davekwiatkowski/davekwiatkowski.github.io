@@ -3,12 +3,23 @@
 }
 
 html {
-  font-size: 25px;
+  font-size: x-large;
   font-family: 'Cormorant Garamond', serif;
+  color: rgb(108, 108, 112);
 }
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: small;
+  font-style: italic;
+  text-align: right;
 }

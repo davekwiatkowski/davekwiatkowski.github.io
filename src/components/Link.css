@@ -1,8 +1,10 @@
 .Link a {
-  color: rgb(255,45,85);
   text-decoration: none;
+  color: blue;
 }
 
-.Link a:visited {
-  color: rgb(0, 122, 255);
+.Link a:after {
+  content: '→';
+  font-size: small;
+  color: red;
 }

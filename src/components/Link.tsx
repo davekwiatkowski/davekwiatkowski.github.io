@@ -13,7 +13,8 @@ const Link: FC<ILinkProps> = (props) => (
     {props.isPrecededBySpace && ' '}
     <a target='_blank'
       rel='noopener noreferrer'
-      href={props.url}>
+      href={props.url}
+      title={props.text}>
       {props.text}
     </a>
     {props.isSucceededBySpace && ' '}
