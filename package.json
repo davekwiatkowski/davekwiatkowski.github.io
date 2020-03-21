@@ -18,11 +18,11 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "yarn build && gh-pages -d build && git add . && git stash && git fetch && git checkout master && git reset --hard origin/gh-pages && git push -u origin master -f && git checkout dev && git stash pop && yarn"
+    "deploy": "yarn build && gh-pages -d build && git add . && git commit -m 'Update' && git push -u origin dev && git fetch && git checkout master && git reset --hard origin/gh-pages && git push -u origin master -f && git checkout dev && git stash pop && yarn"
   },
   "eslintConfig": {
     "extends": "react-app"

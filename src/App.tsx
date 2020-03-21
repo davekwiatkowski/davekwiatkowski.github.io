@@ -12,7 +12,7 @@ const App: FC = () => (
         alt='gif'
         src={gif}
       />
-      <p>Hello!</p>
+      <p>Hi!</p>
       <p>
         I am a software engineer at
         <Link
@@ -35,19 +35,19 @@ const App: FC = () => (
           url='https://davekwiatkowski.com/resume/cv.pdf'
           isPrecededBySpace
         />,
-        here is some of my code on
+        my code on
         <Link
           text='CodePen'
           url='https://codepen.io/davekwiatkowski'
           isPrecededBySpace
         />,
-        here is some more of my code on
+        more of my code on
           <Link
           text='Github'
           url='https://github.com/davekwiatkowski'
           isPrecededBySpace
         />,
-        and here are my articles on
+        and my articles on
         <Link
           text='Medium'
           url='https://medium.com/@davekwiatkowski'
