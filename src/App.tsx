@@ -12,7 +12,7 @@ const App: FC = () => (
         alt='gif'
         src={gif}
       />
-      <p>Hi!</p>
+      <p>Hello!</p>
       <p>
         I am a software engineer at
         <Link
