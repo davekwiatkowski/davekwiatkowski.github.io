@@ -1,0 +1,9 @@
+.Link a {
+  color: rgb(255,45,85);
+  text-decoration: none;
+  font-style: italic;
+}
+
+.Link a:visited {
+  color: rgb(0, 122, 255);
+}

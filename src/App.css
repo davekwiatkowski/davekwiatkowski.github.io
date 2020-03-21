@@ -1,0 +1,17 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Content {
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  max-width: 27em;
+}
+
+img {
+  filter: saturate(1.4);
+}
