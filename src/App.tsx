@@ -78,7 +78,7 @@ const App: FC = () => (
           isPrecededBySpace
         />.
       </p>
-      <p>- Dave</p>
+      <p>Best wishes, Dave</p>
     </div>
   </div>
 );

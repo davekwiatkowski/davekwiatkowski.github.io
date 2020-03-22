@@ -7,15 +7,12 @@ export interface IImageProps {
 }
 
 const Image: FC<IImageProps> = (props) => (
-  <figure>
-    <img
-      src={props.source}
-      alt={props.description}
-      title={props.description}
-      style={props.style}
-    />
-    <figcaption>{props.description}</figcaption>
-  </figure>
+  <img
+    src={props.source}
+    alt={props.description}
+    title={props.description}
+    style={props.style}
+  />
 );
 
 export default Image;
