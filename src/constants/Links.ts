@@ -6,7 +6,7 @@ const Links = {
   codePen: 'https://codepen.io/davekwiatkowski',
   linkedIn: 'https://linkedin.com/in/davekwiatkowski',
   github: 'https://github.com/davekwiatkowski',
-  email: 'mailto:hi@davekwiatkowski.com',
+  email: 'mailto:hi@davekwiatkowski.com?Subject=Hello',
   soundCloud: 'https://soundcloud.com/druffelion',
 };
 
