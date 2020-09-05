@@ -7,6 +7,7 @@ const Strings = {
   medium: 'Medium',
   linkedIn: 'LinkedIn',
   soundCloud: 'SoundCloud',
+  strava: 'Strava',
 };
 
 export default Strings;

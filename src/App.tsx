@@ -25,60 +25,38 @@ const App: FC = () => (
           isSucceededBySpace
         />
         and live in
-        <Link
-          text={Strings.homeTown}
-          url={Links.homeTown}
-          isPrecededBySpace
-        />.
+        <Link text={Strings.homeTown} url={Links.homeTown} isPrecededBySpace />.
       </p>
       <p>
-        Here is my
-        <Link
-          text={Strings.resume}
-          url={Links.resume}
-          isPrecededBySpace
-        />.
-        Here is my code on
-        <Link
-          text={Strings.codePen}
-          url={Links.codePen}
-          isPrecededBySpace
-        />.
-        Here are my projects on
-          <Link
-          text={Strings.github}
-          url={Links.github}
-          isPrecededBySpace
-        />.
-        Here are my articles on
-        <Link
-          text={Strings.medium}
-          url={Links.medium}
-          isPrecededBySpace
-        />.
-        Here is my music on
+        Check out my
+        <Link text={Strings.resume} url={Links.resume} isPrecededBySpace />,
+        code-art on
+        <Link text={Strings.codePen} url={Links.codePen} isPrecededBySpace />,
+        projects on
+        <Link text={Strings.github} url={Links.github} isPrecededBySpace />,
+        articles on
+        <Link text={Strings.medium} url={Links.medium} isPrecededBySpace />,
+        music on
         <Link
           text={Strings.soundCloud}
           url={Links.soundCloud}
           isPrecededBySpace
-        />.
+        />
+        , and runs on
+        <Link text={Strings.strava} url={Links.strava} isPrecededBySpace />.
       </p>
       <p>
-        Please
+        Consider
         <Link
-          text='email me'
+          text='emailing me'
           url={Links.email}
           isPrecededBySpace
           isSucceededBySpace
         />
-        or message me on
-        <Link
-          text={Strings.linkedIn}
-          url={Links.linkedIn}
-          isPrecededBySpace
-        />.
+        or messaging me on
+        <Link text={Strings.linkedIn} url={Links.linkedIn} isPrecededBySpace />.
       </p>
-      <p>Best wishes, Dave</p>
+      <p>-Dave</p>
     </div>
   </div>
 );
@@ -88,6 +66,8 @@ const styles: IStyleSheet = {
     width: '100%',
     maxWidth: '100%',
     height: 'auto',
+    filter:
+      'drop-shadow(-100px -100px 0px tan) brightness(1.5) hue-rotate(-50deg)',
   },
 };
 

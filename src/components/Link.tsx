@@ -11,7 +11,8 @@ interface ILinkProps {
 const Link: FC<ILinkProps> = (props) => (
   <span className='Link'>
     {props.isPrecededBySpace && ' '}
-    <a target='_blank'
+    <a
+      target='_blank'
       rel='noopener noreferrer'
       href={props.url}
       title={props.text}>
