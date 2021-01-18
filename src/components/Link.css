@@ -1,9 +1,9 @@
 .Link a {
-  text-decoration: none;
-  color: black;
+  text-decoration: underline;
+  color: inherit;
+  transition: color 200ms;
 }
 
 .Link a:hover {
-  animation: 300ms ease ani-text forwards;
-  text-decoration: underline;
+  color: rgb(142, 142, 147);
 }
