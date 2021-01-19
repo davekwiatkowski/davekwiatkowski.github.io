@@ -7,7 +7,12 @@ import Strings from './constants/Strings';
 const App: FC = () => (
   <div className='App'>
     <div className='Content'>
-      <p>Hi! 🌲</p>
+      <p>
+        {'Hi! '}
+        <span role='img' aria-label='Evergreen tree'>
+          🌲
+        </span>
+      </p>
       <p>
         I am a software engineer at
         <Link
