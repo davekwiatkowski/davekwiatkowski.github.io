@@ -7,12 +7,7 @@ import Strings from './constants/Strings';
 const App: FC = () => (
   <div className='App'>
     <div className='Content'>
-      <p>
-        {'Hi! '}
-        <span role='img' aria-label='Evergreen tree'>
-          🌲
-        </span>
-      </p>
+      <p>Hi!</p>
       <p>
         I am a software engineer at
         <Link
@@ -53,7 +48,7 @@ const App: FC = () => (
         or messaging me on
         <Link text={Strings.linkedIn} url={Links.linkedIn} isPrecededBySpace />.
       </p>
-      <p>Dave</p>
+      <p>-Dave</p>
     </div>
   </div>
 );

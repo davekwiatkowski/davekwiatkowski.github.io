@@ -1,5 +1,5 @@
 const Strings = {
-  employer: 'Microsoft',
+  employer: 'UiPath',
   homeTown: 'Seattle',
   resume: 'résumé',
   codePen: 'CodePen',
