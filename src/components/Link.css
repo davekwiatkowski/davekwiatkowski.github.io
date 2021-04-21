@@ -2,6 +2,7 @@
   text-decoration: underline;
   color: inherit;
   transition: color 200ms;
+  white-space: nowrap;
 }
 
 .Link a:hover {
