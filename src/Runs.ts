@@ -30,6 +30,12 @@ const Runs: IRun[] = [
     award: 'FKT (Unsupported)',
     link: 'https://fastestknowntime.com/fkt/dave-kwiatkowski-lake-washington-loop-wa-2021-09-12',
   },
+  {
+    date: new Date('08/15/21'),
+    name: 'Tunnel Vision Marathon',
+    award: '3rd',
+    link: 'https://www.itsyourrace.com/results.aspx?id=8084',
+  },
 ];
 
 export default Runs;
