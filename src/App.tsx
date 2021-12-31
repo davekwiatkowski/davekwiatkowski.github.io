@@ -13,27 +13,24 @@ const App: FC = () => {
     <div className='p-8 '>
       <p>Hi!</p>
       <p>I live in Seattle.</p>
-      <p className='font-bold'>I run!</p>
+      <p>I run!</p>
       <p>
         You can follow me on <Link href={Urls.strava}>Strava</Link> or{' '}
         <Link href={Urls.instagram}>Instagram</Link>.
       </p>
-      <div className='pt-8'>
-        <p>My recent running achievements:</p>
-        <table className='table-auto'>
-          <tbody className='divide-y-4 divide-sky-50 divide'>
-            {runs.map((run) => (
-              <Run {...run} />
-            ))}
-          </tbody>
-        </table>
+      <div className='pt-8 pb-8'>
+        <p className='pb-4'>My recent notable runs:</p>
+        <div className='flex flex-row flex-wrap max-w-screen-xl'>
+          {runs.map((run, i) => (
+            <Run {...run} key={i} index={runs.length - i} />
+          ))}
+        </div>
       </div>
-      <p className='pt-8'>
-        Reach out to me if you want!{' '}
+      <p>Reach out to me if you want! </p>
+      <p>
+        {' '}
         <Link href='mailto:hi@davekwiatkowski.com'>hi@davekwiatkowski.com</Link>
       </p>
-      <p>Thanks for visiting!</p>
-      <p>🙂</p>
     </div>
   );
 };
