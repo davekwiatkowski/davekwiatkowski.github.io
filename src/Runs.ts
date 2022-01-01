@@ -9,7 +9,7 @@ export interface IRun {
   type: 'Backyard' | 'Race' | 'FKT';
   surface: 'Trail' | 'Road';
   fktType?: 'Unsupported';
-  yards?: number;
+  summary: string;
 }
 
 const Runs: IRun[] = [
@@ -23,6 +23,8 @@ const Runs: IRun[] = [
     type: 'FKT',
     fktType: 'Unsupported',
     surface: 'Trail',
+    summary:
+      'I always wanted to go after a record time around my home town. This attempt is not the fastest possible, so I would love to go after this again.',
   },
   {
     date: new Date('12/05/21'),
@@ -34,6 +36,8 @@ const Runs: IRun[] = [
     place: '1st',
     type: 'Race',
     surface: 'Trail',
+    summary:
+      'Zipping through leaves, trees, and creeks. That is pretty much how this went. Nothing beats the first 3 miles where you can barely see the trail!',
   },
   {
     date: new Date('10/16/21'),
@@ -44,8 +48,9 @@ const Runs: IRun[] = [
     time: '27 hours',
     place: '3rd',
     type: 'Backyard',
-    yards: 27,
     surface: 'Trail',
+    summary:
+      'My first backyard ultra was a blast, and it was super close to home. I learned a lot about ultra marathoning in this, and I cannot wait to go further.',
   },
   {
     date: new Date('09/12/21'),
@@ -57,6 +62,8 @@ const Runs: IRun[] = [
     type: 'FKT',
     fktType: 'Unsupported',
     surface: 'Road',
+    summary:
+      'Ever since moving to Seattle, I wanted to tour the Seattle area by circumnavigating the iconic Lake Washington. I left this with a torn MCL.',
   },
   {
     date: new Date('08/15/21'),
@@ -68,6 +75,8 @@ const Runs: IRun[] = [
     place: '3rd',
     type: 'Race',
     surface: 'Trail',
+    summary:
+      'After running a sub-3 marathon time trial, I signed up for my first marathon: a downhill trail race with some spectacular views of the PNW. A blast.',
   },
 ];
 

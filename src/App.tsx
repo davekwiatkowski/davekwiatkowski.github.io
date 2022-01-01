@@ -10,8 +10,8 @@ const App: FC = () => {
     []
   );
   return (
-    <div className='p-4 leading-none'>
-      <div className='flex flex-row flex-wrap gap-4 md:flex-nowrap'>
+    <div className='leading-none md:pt-4'>
+      <div className='flex flex-row flex-wrap gap-4 pt-4 pb-4 pl-4 pr-4 md:pt-0 md:pb-0 md:flex-nowrap'>
         <h1 className='text-3xl sm:text-5xl whitespace-nowrap'>
           Dave Kwiatkowski
         </h1>
@@ -35,15 +35,17 @@ const App: FC = () => {
           !
         </p>
       </div>
-      <div className=''>
-        <p className='font-bold text-display whitespace-nowrap'>I ran:</p>
+      <p className='pl-4 pr-4 font-bold text-display whitespace-nowrap md:pl-0 md:pr-0'>
+        I ran...
+      </p>
+      <div className='p-4'>
         <div className='flex flex-row flex-wrap max-w-screen-xl'>
           {runs.map((run, i) => (
             <Run {...run} key={i} index={runs.length - i} />
           ))}
         </div>
+        <p className='italic'>- Dave</p>
       </div>
-      <p className='pt-4'>👋</p>
     </div>
   );
 };
