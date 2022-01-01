@@ -7,7 +7,9 @@ export interface IRun {
   time: string;
   place?: string;
   type: 'Backyard' | 'Race' | 'FKT';
+  surface: 'Trail' | 'Road';
   fktType?: 'Unsupported';
+  yards?: number;
 }
 
 const Runs: IRun[] = [
@@ -20,6 +22,7 @@ const Runs: IRun[] = [
     time: '5:40:03',
     type: 'FKT',
     fktType: 'Unsupported',
+    surface: 'Trail',
   },
   {
     date: new Date('12/05/21'),
@@ -30,6 +33,7 @@ const Runs: IRun[] = [
     time: '1:15:04',
     place: '1st',
     type: 'Race',
+    surface: 'Trail',
   },
   {
     date: new Date('10/16/21'),
@@ -40,6 +44,8 @@ const Runs: IRun[] = [
     time: '27 hours',
     place: '3rd',
     type: 'Backyard',
+    yards: 27,
+    surface: 'Trail',
   },
   {
     date: new Date('09/12/21'),
@@ -50,6 +56,7 @@ const Runs: IRun[] = [
     time: '6:40:55',
     type: 'FKT',
     fktType: 'Unsupported',
+    surface: 'Road',
   },
   {
     date: new Date('08/15/21'),
@@ -60,6 +67,7 @@ const Runs: IRun[] = [
     time: '2:42:42',
     place: '3rd',
     type: 'Race',
+    surface: 'Trail',
   },
 ];
 

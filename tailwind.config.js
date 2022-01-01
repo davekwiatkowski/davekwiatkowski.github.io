@@ -4,9 +4,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {},
-    screens: {
-      xs: '475px',
-      ...defaultTheme.screens,
+    fontSize: {
+      display: '17vw',
+      ...defaultTheme.fontSize,
     },
   },
   plugins: [],
