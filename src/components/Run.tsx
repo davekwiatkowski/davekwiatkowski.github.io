@@ -39,14 +39,14 @@ const Run: FC<IRunProps> = ({
       <table className='w-full text-sm text-left divide-y divide-black table-fixed'>
         <thead>
           <tr>
-            <th className='w-20 text-3xl font-normal text-black'>
-              {'#' + String(index).padStart(3, '0')}
+            <th className='w-20 font-bold text-black'>
+              {date.toLocaleDateString()}
             </th>
           </tr>
         </thead>
         <tbody className='divide-y divide-black'>
           <tr>
-            <td className='mt-1 mb-1'>{date.toLocaleDateString()}</td>
+            <td className='mt-1 mb-1'>Type</td>
             <td className='flex flex-wrap gap-1 pr-2 mt-1 mb-1'>
               {surface === 'Trail' && (
                 <Tag className='bg-lime-200'>{surface}</Tag>
