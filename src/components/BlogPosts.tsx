@@ -21,24 +21,30 @@ const BlogPosts: FC = () => {
     <div className='p-4'>
       <div className='flex flex-row flex-wrap max-w-screen-xl'>
         {allPostsData &&
-          allPostsData.map((post: any, index: number) => (
-            <Link
-              className='w-full pb-4 pr-4 sm:w-1/2 md:w-1/3 lg:w-1/4'
-              to={'/' + post.slug.current}
-              key={post.slug.current}>
-              <div
-                className={`${
-                  index === 0 ? 'bg-green-200' : 'bg-white'
-                } h-full p-2 border border-black hover:bg-black hover:text-white`}>
-                <h2 className='underline '>
-                  {new Date(post.publishedAt).toDateString()}
-                </h2>
-                <div className='text-3xl italic text-justify font-extralight'>
-                  {post.title}
+          allPostsData
+            .sort(
+              (a: any, b: any) =>
+                new Date(b.publishedAt).getTime() -
+                new Date(a.publishedAt).getTime()
+            )
+            .map((post: any, index: number) => (
+              <Link
+                className='w-full pb-4 pr-4 sm:w-1/2 md:w-1/3 lg:w-1/4'
+                to={'/' + post.slug.current}
+                key={post.slug.current}>
+                <div
+                  className={`${
+                    index === 0 ? 'bg-green-200' : 'bg-white'
+                  } h-full p-2 border border-black hover:bg-black hover:text-white`}>
+                  <h2 className='underline '>
+                    {new Date(post.publishedAt).toDateString()}
+                  </h2>
+                  <div className='text-3xl italic text-justify font-extralight'>
+                    {post.title}
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
       </div>
     </div>
   );
