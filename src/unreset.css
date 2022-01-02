@@ -5,3 +5,26 @@
 .unreset a {
   @apply text-blue-500 underline;
 }
+
+.unreset ul,
+menu {
+  @apply pl-5 my-4 list-disc;
+}
+
+.unreset li > p {
+  @apply my-0;
+}
+
+.unreset ol {
+  @apply pl-5 my-4 list-decimal;
+}
+
+.unreset ol,
+ul {
+  list-style-type: circle;
+}
+
+.unreset ol,
+ul {
+  list-style-type: circle;
+}
