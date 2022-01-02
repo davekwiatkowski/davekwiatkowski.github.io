@@ -1,16 +1,18 @@
 import React, { FC } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import BlogPostPage from './pages/BlogPostPage';
 
 const App: FC = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<HomePage />} path='/' />
-        <Route element={<BlogPostPage />} path='/:slug' />
-      </Routes>
-    </BrowserRouter>
+    <React.StrictMode>
+      <HashRouter>
+        <Routes>
+          <Route element={<HomePage />} path='/' />
+          <Route element={<BlogPostPage />} path='/:slug' />
+        </Routes>
+      </HashRouter>
+    </React.StrictMode>
   );
 };
 
