@@ -16,7 +16,6 @@ const Run: FC<IRunProps> = ({
   time,
   fktType,
   type,
-  index,
   surface,
   summary,
 }) => {
