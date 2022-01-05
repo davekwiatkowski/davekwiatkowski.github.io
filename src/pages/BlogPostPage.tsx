@@ -2,14 +2,6 @@ import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import SanityClient from '../SanityClient';
 import BlockContent from '@sanity/block-content-to-react';
-import {
-  EmailIcon,
-  EmailShareButton,
-  FacebookIcon,
-  FacebookShareButton,
-  TwitterIcon,
-  TwitterShareButton,
-} from 'react-share';
 import HelmetMetaData from '../components/HelmetMetaData';
 import imageUrlBuilder from '@sanity/image-url';
 
@@ -98,25 +90,6 @@ const BlogPostPage: FC = () => {
                 />
               </div>
               <hr className='mb-4'></hr>
-              <div className='flex flex-row flex-wrap gap-2 mb-4'>
-                <FacebookShareButton
-                  url={window.location.href}
-                  quote={description}
-                  hashtag={`#${hashtag}`}>
-                  <FacebookIcon className='rounded-full' size={32} />
-                </FacebookShareButton>
-                <TwitterShareButton
-                  url={window.location.href}
-                  title={description}
-                  hashtags={[hashtag]}>
-                  <TwitterIcon className='rounded-full' size={32} />
-                </TwitterShareButton>
-                <EmailShareButton
-                  url={window.location.href}
-                  subject={description}>
-                  <EmailIcon className='rounded-full' size={32} />
-                </EmailShareButton>
-              </div>
               <div
                 className='text-teal-500 cursor-pointer hover:text-teal-600'
                 onClick={handleClose}>
