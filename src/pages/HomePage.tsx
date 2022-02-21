@@ -28,7 +28,7 @@ const HomePage: FC = () => {
             <Link href='mailto:hi@davekwiatkowski.com'>Send me an email</Link>
           </div>
         </div>
-        <p className='w-full text-sm md:w-none'>
+        <p className='w-full max-w-4xl text-sm md:w-none'>
           I am an inhabitant of Seattle from Charlottesville, VA who has a love
           for long runs. Most of my runs consist of going up and down the steep
           streets in Seattle, though nothing beats a nice run on the trails.
