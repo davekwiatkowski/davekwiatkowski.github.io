@@ -16,8 +16,7 @@ const Run: FC<IRunProps> = ({
   time,
   fktType,
   type,
-  surface,
-  summary,
+  yards,
 }) => {
   const handleClick = useCallback(() => {
     window.open(link);
@@ -37,21 +36,20 @@ const Run: FC<IRunProps> = ({
           <tr>
             <td className='mt-1 mb-1'>Type</td>
             <td className='flex flex-wrap gap-1 pr-2 mt-1 mb-1'>
-              {surface === 'Trail' && (
-                <Tag className='bg-lime-200'>{surface}</Tag>
-              )}
-              {surface === 'Road' && (
-                <Tag className='bg-cyan-200'>{surface}</Tag>
-              )}
               {type === 'Backyard' && (
-                <Tag className='bg-purple-200'>{type}</Tag>
+                <>
+                  <Tag className='bg-blue-200'>{type}</Tag>
+                  <Tag className='bg-blue-100'>{yards} yards</Tag>
+                </>
               )}
-              {type === 'FKT' && <Tag className='bg-teal-200'>{type}</Tag>}
-              {fktType === 'Unsupported' && (
-                <Tag className='bg-teal-100'>{fktType}</Tag>
+              {type === 'FKT' && (
+                <>
+                  <Tag className='bg-fuchsia-200'>{type}</Tag>
+                  <Tag className='bg-fuchsia-100'>{fktType}</Tag>
+                </>
               )}
-              {type === 'Race' && <Tag className='bg-rose-200'>{type}</Tag>}
-              {place && <Tag className='bg-rose-100'>{place}</Tag>}
+              {type === 'Race' && <Tag className='bg-red-200'>{type}</Tag>}
+              {place && <Tag className='bg-red-100'>{place}</Tag>}
             </td>
           </tr>
           <tr>
@@ -71,11 +69,11 @@ const Run: FC<IRunProps> = ({
             <td className='pr-2'>{time}</td>
           </tr>
           <tr>
-            <td>Reference</td>
+            <td>Link</td>
             <td
               className='flex cursor-pointer hover:bg-gray-100'
               onClick={handleClick}>
-              <div className='underline '>Link to result →</div>
+              <div className='underline '>See result →</div>
             </td>
           </tr>
         </tbody>
