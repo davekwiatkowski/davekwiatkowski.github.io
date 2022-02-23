@@ -12,7 +12,7 @@ const HomePage: FC = () => {
   );
   return (
     <div className='leading-none md:pt-4'>
-      <div className='flex flex-row flex-wrap gap-4 pt-4 pb-4 pl-4 pr-4 mb-4 md:pt-0 md:pb-0 md:flex-nowrap'>
+      <div className='flex flex-row flex-wrap gap-4 pt-4 pb-4 pl-4 pr-4 md:pt-0 md:pb-0 md:flex-nowrap'>
         <div className='flex flex-col gap-2'>
           <h1 className='text-3xl sm:text-5xl whitespace-nowrap'>
             Dave Kwiatkowski
