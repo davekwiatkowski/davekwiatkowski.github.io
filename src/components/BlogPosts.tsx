@@ -29,7 +29,7 @@ const BlogPosts: FC = () => {
             )
             .map((post: any, index: number) => (
               <Link
-                className='flex w-full pb-4 pr-4 sm:w-1/2 md:w-1/3 lg:w-1/4'
+                className='flex w-full pb-4 pr-4 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5'
                 to={'/' + post.slug.current}
                 key={post.slug.current}>
                 <div className='flex flex-col w-full h-full'>
@@ -41,7 +41,7 @@ const BlogPosts: FC = () => {
                       index === 0 ? 'bg-green-200' : 'bg-white'
                     } h-full p-2 border-2 border-black border-dotted hover:bg-black hover:text-white`}>
                     <div className={`text-3xl text-justify font-extralight`}>
-                      {post.title}
+                      "{post.title}"
                     </div>
                   </div>
                 </div>

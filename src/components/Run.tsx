@@ -17,24 +17,26 @@ const Run: FC<IRunProps> = ({
   fktType,
   type,
   yards,
+  index,
 }) => {
   const handleClick = useCallback(() => {
     window.open(link);
   }, [link]);
 
   return (
-    <div className='w-full pb-4 pr-4 sm:w-1/2 md:w-1/3 lg:w-1/4'>
+    <div className='w-full pb-4 pr-4 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5'>
       <table className='w-full text-sm text-left divide-y divide-gray-300 table-fixed'>
         <thead>
           <tr>
-            <th className='w-20 italic font-light text-black'>
+            <th className='w-12 font-light'>{index}</th>
+            <th className='italic font-light text-black'>
               {date.toLocaleDateString()}
             </th>
           </tr>
         </thead>
         <tbody className='divide-y divide-gray-300'>
           <tr>
-            <td className='mt-1 mb-1'>Type</td>
+            <td className='mt-1 mb-1 font-light'>Type</td>
             <td className='flex flex-wrap gap-1 pr-2 mt-1 mb-1'>
               {type === 'Backyard' && (
                 <>
@@ -53,27 +55,30 @@ const Run: FC<IRunProps> = ({
             </td>
           </tr>
           <tr>
-            <td>Course</td>
-            <td className='pr-2 font-normal'>{course}</td>
+            <td className='font-light'>Name</td>
+            <td className='pr-2'>{course}</td>
           </tr>
           <tr>
-            <td className='pr-2'>Location</td>
+            <td className='pr-2 font-light'>Place</td>
             <td className='pr-2'>{location}</td>
           </tr>
           <tr>
-            <td className='pr-2'>Distance</td>
+            <td className='pr-2 font-light'>Dist.</td>
             <td className='pr-2'>{distance}</td>
           </tr>
           <tr>
-            <td className='pr-2'>Time</td>
+            <td className='pr-2 font-light'>Time</td>
             <td className='pr-2'>{time}</td>
           </tr>
           <tr>
-            <td>Link</td>
+            <td className='font-light'>Link</td>
             <td
               className='flex cursor-pointer hover:bg-gray-100'
               onClick={handleClick}>
-              <div className='underline '>See result →</div>
+              <div>
+                <span className='underline'>See result</span>
+                <span className='ml-1'>→</span>
+              </div>
             </td>
           </tr>
         </tbody>
