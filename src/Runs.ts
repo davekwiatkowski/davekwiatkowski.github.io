@@ -13,6 +13,26 @@ export interface IRun {
 
 const Runs: IRun[] = [
   {
+    date: new Date('04/18/22'),
+    course: 'Boston Marathon',
+    link: 'https://www.strava.com/activities/7003299898/overview',
+    location: 'Boston, MA',
+    distance: 'Marathon',
+    time: '2:43:35',
+    place: 'lol',
+    type: 'Race',
+  },
+  {
+    date: new Date('03/26/22'),
+    course: 'Cherry Blossom Half Marathon',
+    link: 'https://www.strava.com/activities/6886778003/overview',
+    location: 'Seattle, WA',
+    distance: 'Half Marathon',
+    time: '1:16:31',
+    place: '4th?',
+    type: 'Race',
+  },
+  {
     date: new Date('02/19/22'),
     course: 'Snoqualmie Valley Trail',
     link: 'https://fastestknowntime.com/fkt/dave-kwiatkowski-snoqualmie-valley-trail-wa-2022-02-19',
