@@ -24,7 +24,7 @@ const Runs: IRun[] = [
   },
   {
     date: new Date('03/26/22'),
-    course: 'Cherry Blossom Half Marathon',
+    course: 'Cherry Blossom Half',
     link: 'https://www.strava.com/activities/6886778003/overview',
     location: 'Seattle, WA',
     distance: 'Half Marathon',
