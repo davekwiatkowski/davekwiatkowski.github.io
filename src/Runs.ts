@@ -19,7 +19,7 @@ const Runs: IRun[] = [
     location: 'Boston, MA',
     distance: 'Marathon',
     time: '2:43:35',
-    place: 'lol',
+    place: '716th',
     type: 'Race',
   },
   {
