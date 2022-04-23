@@ -4,6 +4,7 @@ import Tag from './Tag';
 
 interface IRunProps extends IRun {
   index: number;
+  isFirst: boolean;
 }
 
 const Run: FC<IRunProps> = ({
@@ -18,18 +19,22 @@ const Run: FC<IRunProps> = ({
   type,
   yards,
   index,
+  isFirst,
 }) => {
   const handleClick = useCallback(() => {
     window.open(link);
   }, [link]);
 
   return (
-    <div className='w-full pb-4 pr-4 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5'>
+    <div className={`w-full pb-4 pr-4 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5`}>
       <table className='w-full text-sm text-left divide-y divide-gray-300 table-fixed'>
         <thead>
           <tr>
             <th className='w-12 font-light'>{index}</th>
-            <th className='italic font-light text-black'>
+            <th
+              className={`italic text-black ${
+                isFirst ? 'font-semibold' : 'font-light'
+              }`}>
               {date.toLocaleDateString()}
             </th>
           </tr>

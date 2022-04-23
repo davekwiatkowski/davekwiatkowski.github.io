@@ -11,7 +11,7 @@ const HomePage: FC = () => {
     []
   );
   return (
-    <div className='leading-none md:pt-4'>
+    <div className='leading-none lowercase md:pt-4'>
       <div className='flex flex-row flex-wrap gap-4 pt-4 pb-4 pl-4 pr-4 md:pt-0 md:pb-0 md:flex-nowrap'>
         <div className='flex flex-col gap-2'>
           <h1 className='text-3xl sm:text-5xl whitespace-nowrap'>
@@ -28,20 +28,22 @@ const HomePage: FC = () => {
             <Link href='mailto:hi@davekwiatkowski.com'>Send me an email</Link>
           </div>
         </div>
-        <p className='w-full max-w-4xl text-sm md:w-none'>
-          I am an inhabitant of Seattle from Charlottesville, VA who has a love
-          for long runs. Most of my runs consist of going up and down the steep
-          streets in Seattle, though nothing beats a nice run on the trails.
-          Outside of running, I write code, experiment with different art forms,
-          and sometimes go bouldering. If you're in the Seattle area, I'm always
-          down to go on a run or chat!
+        <p className='w-full max-w-4xl text-sm font-light md:w-none'>
+          I am from C'Ville, VA
+          <br />
+          I run for Seattle Running Club
+          <br />
+          My dad taught me how to juggle recently
         </p>
       </div>
       <BlogPosts />
       <div className='pl-4 pr-4'>
+        <div className='mb-2 text-2xl font-extralight'>
+          {'Here are some of my runs'}
+        </div>
         <div className='flex flex-row flex-wrap max-w-screen-xl'>
           {runs.map((run, i) => (
-            <Run {...run} key={i} index={runs.length - i} />
+            <Run {...run} key={i} index={runs.length - i} isFirst={i === 0} />
           ))}
         </div>
       </div>
