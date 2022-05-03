@@ -11,7 +11,7 @@ const HomePage: FC = () => {
     []
   );
   return (
-    <div className='leading-none lowercase md:pt-4'>
+    <div className='leading-none md:pt-4'>
       <div className='flex flex-row flex-wrap gap-4 pt-4 pb-4 pl-4 pr-4 md:pt-0 md:pb-0 md:flex-nowrap'>
         <div className='flex flex-col gap-2'>
           <h1 className='text-3xl sm:text-5xl whitespace-nowrap'>
@@ -29,18 +29,15 @@ const HomePage: FC = () => {
           </div>
         </div>
         <p className='w-full max-w-4xl text-sm font-light md:w-none'>
-          I am from C'Ville, VA
+          I run for Seattle Running Club.
           <br />
-          I run for Seattle Running Club
+          I am from the C'Ville in Virginia.
           <br />
-          My dad taught me how to juggle recently
+          My dad taught me how to juggle.
         </p>
       </div>
       <BlogPosts />
       <div className='pl-4 pr-4'>
-        <div className='mb-2 text-2xl font-extralight'>
-          {'Here are some of my runs'}
-        </div>
         <div className='flex flex-row flex-wrap max-w-screen-xl'>
           {runs.map((run, i) => (
             <Run {...run} key={i} index={runs.length - i} isFirst={i === 0} />

@@ -13,9 +13,19 @@ export interface IRun {
 
 const Runs: IRun[] = [
   {
+    date: new Date('04/30/22'),
+    course: 'Burke-Gilman Trail O&B',
+    link: 'https://www.strava.com/activities/7066964361',
+    location: 'Seattle, WA',
+    distance: '40 mi',
+    time: '4:37:13',
+    type: 'FKT',
+    fktType: 'Unsupported',
+  },
+  {
     date: new Date('04/18/22'),
     course: 'Boston Marathon',
-    link: 'https://www.strava.com/activities/7003299898/overview',
+    link: 'https://www.strava.com/activities/7003299898',
     location: 'Boston, MA',
     distance: 'Marathon',
     time: '2:43:35',
@@ -25,7 +35,7 @@ const Runs: IRun[] = [
   {
     date: new Date('03/26/22'),
     course: 'Cherry Blossom Half',
-    link: 'https://www.strava.com/activities/6886778003/overview',
+    link: 'https://www.strava.com/activities/6886778003',
     location: 'Seattle, WA',
     distance: 'Half Marathon',
     time: '1:16:31',

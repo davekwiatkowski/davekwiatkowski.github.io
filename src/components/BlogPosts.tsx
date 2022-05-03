@@ -26,9 +26,6 @@ const BlogPosts: FC = () => {
 
   return (
     <div className='p-4'>
-      <div className='mb-2 text-2xl font-extralight'>
-        {'Read my blog if you want'}
-      </div>
       <div className='flex flex-row flex-wrap max-w-screen-xl'>
         {allPostsData ? (
           allPostsData
