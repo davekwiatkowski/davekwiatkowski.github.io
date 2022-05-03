@@ -15,7 +15,7 @@ const Runs: IRun[] = [
   {
     date: new Date('04/30/22'),
     course: 'Burke-Gilman Trail O&B',
-    link: 'https://www.strava.com/activities/7066964361',
+    link: 'https://fastestknowntime.com/fkt/dave-kwiatkowski-burke-gilman-trail-wa-2022-04-30',
     location: 'Seattle, WA',
     distance: '40 mi',
     time: '4:37:13',
