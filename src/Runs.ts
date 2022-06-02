@@ -13,6 +13,16 @@ export interface IRun {
 
 const Runs: IRun[] = [
   {
+    date: new Date('05/28/22'),
+    course: 'Capital Backyard Ultra',
+    link: 'https://my.raceresult.com/203525/#0_B3DC1F',
+    location: 'Lorton, VA',
+    distance: '154.1 mi',
+    time: '37 hours',
+    type: 'Backyard',
+    yards: 37,
+  },
+  {
     date: new Date('04/30/22'),
     course: 'Burke-Gilman Trail O&B',
     link: 'https://fastestknowntime.com/fkt/dave-kwiatkowski-burke-gilman-trail-wa-2022-04-30',
@@ -81,7 +91,6 @@ const Runs: IRun[] = [
     time: '27 hours',
     type: 'Backyard',
     yards: 27,
-    place: '3rd',
   },
   {
     date: new Date('09/12/21'),

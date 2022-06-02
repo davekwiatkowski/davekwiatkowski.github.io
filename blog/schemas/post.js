@@ -1,4 +1,4 @@
-export default {
+const post = {
   name: 'post',
   title: 'Post',
   type: 'document',
@@ -30,6 +30,16 @@ export default {
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Caption',
+          options: {
+            isHighlighted: true
+          },
+        },
+      ],
     },
     {
       name: 'categories',
@@ -62,4 +72,6 @@ export default {
       })
     },
   },
-}
+};
+
+export default post;

@@ -11,7 +11,7 @@ import post from './post'
 import author from './author'
 
 // Then we give our schema to the builder and provide the result to Sanity
-export default createSchema({
+const schema = createSchema({
   // We name our schema
   name: 'default',
   // Then proceed to concatenate our document type
@@ -26,4 +26,6 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     blockContent,
   ]),
-})
+});
+
+export default schema;

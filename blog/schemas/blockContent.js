@@ -8,7 +8,7 @@
  *    type: 'blockContent'
  *  }
  */
-export default {
+const blockContent = {
   title: 'Block Content',
   name: 'blockContent',
   type: 'array',
@@ -63,6 +63,18 @@ export default {
     {
       type: 'image',
       options: { hotspot: true },
+      fields: [
+       {
+         name: 'caption',
+         type: 'string',
+         title: 'Caption',
+         options: {
+           isHighlighted: true
+         },
+       },
+      ],
     },
   ],
 };
+
+export default blockContent;

@@ -43,7 +43,8 @@ const BlogPostPage: FC = () => {
             _id,
             url
           },
-          crop
+          crop,
+          caption
         }
        }`,
       { slug }
@@ -78,15 +79,31 @@ const BlogPostPage: FC = () => {
                 </div>
               </div>
               <hr className='mt-4 mb-4' />
-              <img
-                src={urlFor(postData.mainImage).url()}
-                alt={postData.title}
-              />
+              <figure>
+                <img
+                  src={urlFor(postData.mainImage).url()}
+                  alt={postData.mainImage.caption ?? undefined}
+                />
+                {postData.mainImage.caption && <figcaption className='text-center italic text-sm text-gray-600'>{postData.mainImage.caption}</figcaption>}
+              </figure>
               <div className='unreset'>
                 <BlockContent
                   blocks={postData.body}
                   projectId={sanityConfig.projectId}
                   dataset={sanityConfig.dataset}
+                  serializers={{
+                    types: {
+                      image: ({ node }) => {
+                        if (!node || !node.asset || !node.asset._ref) {
+                          return null;
+                        }
+                        return <figure>
+                          <img src={urlFor(node).url()} alt={node.caption ?? undefined}/>
+                          {node.caption && <figcaption className='text-center italic text-sm text-gray-600'>{node.caption}</figcaption>}
+                        </figure>;
+                      }
+                    }
+                  }}
                 />
               </div>
               <hr className='mb-4'></hr>
