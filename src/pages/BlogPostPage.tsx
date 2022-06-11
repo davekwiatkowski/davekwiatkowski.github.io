@@ -1,21 +1,39 @@
-import React, { FC, useCallback, useEffect, useMemo, useState } from 'react';
+import { FC, useCallback, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import SanityClient from '../SanityClient';
+import sanityClient from '../constants/sanityClient';
 import BlockContent from '@sanity/block-content-to-react';
 import HelmetMetaData from '../components/HelmetMetaData';
 import imageUrlBuilder from '@sanity/image-url';
+import useSanityFetch from '../util/useSanityFetch';
+import LoadingSignal from '../components/LoadingSignal';
 
-const builder = imageUrlBuilder(SanityClient);
+const builder = imageUrlBuilder(sanityClient);
 function urlFor(source: string) {
   return builder.image(source);
 }
 
 const BlogPostPage: FC = () => {
-  const [postData, setPostData] = useState<any>(null);
   const { slug } = useParams();
   const navigate = useNavigate();
-  const sanityConfig = useMemo(() => SanityClient.config(), []);
-
+  const postData = useSanityFetch(
+    `*[slug.current == $slug]{
+      title,
+      slug,
+      body,
+      publishedAt,
+      "name": author->name,
+      mainImage{
+        asset->{
+          _id,
+          url
+        },
+        crop,
+        caption
+      }
+    }`,
+    { params: { slug }, isOneResult: true }
+  );
+  const sanityConfig = useMemo(() => sanityClient.config(), []);
   const hashtag = useMemo(() => 'davekwiatkowski', []);
   const description = useMemo(
     () => postData && `"${postData.title}" by ${postData.name}`,
@@ -29,29 +47,6 @@ const BlogPostPage: FC = () => {
     },
     [navigate]
   );
-
-  useEffect(() => {
-    SanityClient.fetch(
-      `*[slug.current == $slug]{
-        title,
-        slug,
-        body,
-        publishedAt,
-        "name": author->name,
-        mainImage{
-          asset->{
-            _id,
-            url
-          },
-          crop,
-          caption
-        }
-       }`,
-      { slug }
-    )
-      .then((data) => setPostData(data[0]))
-      .catch(console.error);
-  }, [slug]);
 
   return (
     <div className='flex flex-col p-4 pt-12 pb-12'>
@@ -84,7 +79,11 @@ const BlogPostPage: FC = () => {
                   src={urlFor(postData.mainImage).url()}
                   alt={postData.mainImage.caption ?? undefined}
                 />
-                {postData.mainImage.caption && <figcaption className='text-center italic text-sm text-gray-600'>{postData.mainImage.caption}</figcaption>}
+                {postData.mainImage.caption && (
+                  <figcaption className='text-sm italic text-center text-gray-600'>
+                    {postData.mainImage.caption}
+                  </figcaption>
+                )}
               </figure>
               <div className='unreset'>
                 <BlockContent
@@ -97,12 +96,21 @@ const BlogPostPage: FC = () => {
                         if (!node || !node.asset || !node.asset._ref) {
                           return null;
                         }
-                        return <figure>
-                          <img src={urlFor(node).url()} alt={node.caption ?? undefined}/>
-                          {node.caption && <figcaption className='text-center italic text-sm text-gray-600'>{node.caption}</figcaption>}
-                        </figure>;
-                      }
-                    }
+                        return (
+                          <figure>
+                            <img
+                              src={urlFor(node).url()}
+                              alt={node.caption ?? undefined}
+                            />
+                            {node.caption && (
+                              <figcaption className='text-sm italic text-center text-gray-600'>
+                                {node.caption}
+                              </figcaption>
+                            )}
+                          </figure>
+                        );
+                      },
+                    },
                   }}
                 />
               </div>
@@ -115,7 +123,7 @@ const BlogPostPage: FC = () => {
               </div>
             </>
           ) : (
-            <>Loading...</>
+            <LoadingSignal />
           )}
         </div>
       </div>

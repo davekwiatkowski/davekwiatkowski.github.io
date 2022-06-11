@@ -1,28 +1,23 @@
-import React, { FC, useEffect, useState } from 'react';
-import SanityClient from '../SanityClient';
+import { FC } from 'react';
+import useSanityFetch from '../util/useSanityFetch';
 import BlogPost from './BlogPost';
+import LoadingSignal from './LoadingSignal';
 
 const BlogPosts: FC = () => {
-  const [allPostsData, setAllPosts] = useState<any>(null);
-
-  useEffect(() => {
-    SanityClient.fetch(
-      `*[_type == "post"]{
-        title,
-        publishedAt,
-        slug,
-        mainImage{
-          asset->{
-            _id,
-            url
-          },
-          crop,
-        }
-      }`
-    )
-      .then((data) => setAllPosts(data))
-      .catch(console.error);
-  }, []);
+  const allPostsData = useSanityFetch(
+    `*[_type == "post"]{
+      title,
+      publishedAt,
+      slug,
+      mainImage{
+        asset->{
+          _id,
+          url
+        },
+        crop,
+      }
+    }`
+  );
 
   return (
     <div className='p-4'>
@@ -38,7 +33,7 @@ const BlogPosts: FC = () => {
               <BlogPost post={post} index={index} />
             ))
         ) : (
-          <div className='p-2'>Loading blog posts...</div>
+          <LoadingSignal />
         )}
       </div>
     </div>

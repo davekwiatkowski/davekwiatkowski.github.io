@@ -1,12 +1,6 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import imageUrlBuilder from '@sanity/image-url';
-import SanityClient from '../SanityClient';
-
-const builder = imageUrlBuilder(SanityClient);
-function urlFor(source: string) {
-  return builder.image(source);
-}
+import getUrlFor from '../util/getUrlFor';
 
 const BlogPost: FC<{ post: any; index: number }> = ({ post, index }) => {
   return (
@@ -26,7 +20,7 @@ const BlogPost: FC<{ post: any; index: number }> = ({ post, index }) => {
             index === 0 ? 'bg-yellow-200' : 'bg-white'
           }`}>
           <img
-            src={urlFor(post.mainImage).url()}
+            src={getUrlFor(post.mainImage).url()}
             alt={post.title}
             className='w-[130px] h-[130px] object-cover shrink-0 p-2'
           />
