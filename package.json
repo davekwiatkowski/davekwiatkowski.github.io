@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "start": "yarn workspaces foreach --parallel --verbose run start",
-    "deploy": "yarn workspace app run deploy"
+    "deploy": "yarn workspaces foreach --parallel --verbose run deploy"
   },
   "packageManager": "yarn@3.2.1"
 }
