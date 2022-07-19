@@ -30,7 +30,7 @@ const BlogPosts: FC = () => {
                 new Date(a.publishedAt).getTime()
             )
             .map((post: any, index: number) => (
-              <BlogPost post={post} index={index} />
+              <BlogPost key={post.publishedAt} post={post} index={index} />
             ))
         ) : (
           <LoadingSignal />

@@ -1,79 +1,67 @@
 import { FC, useCallback } from 'react';
-import { IRun } from '../Runs';
+import IRun from '../types/IRun';
 import Tag from './Tag';
 
-interface IRunProps extends IRun {
-  index: number;
-  isFirst: boolean;
-}
-
-const Run: FC<IRunProps> = ({
-  link,
-  course,
-  place,
-  date,
-  location,
-  distance,
-  time,
-  fktType,
-  type,
-  yards,
-  index,
-  isFirst,
-}) => {
+const Run: FC<{ index: number; run: IRun }> = ({ index, run }) => {
   const handleClick = useCallback(() => {
-    window.open(link);
-  }, [link]);
+    window.open(run.link);
+  }, [run.link]);
 
   return (
-    <div className={`w-full pb-4 pr-4 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5`}>
+    <div
+      key={index}
+      className={`w-full pb-4 pr-4 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5`}>
       <table className='w-full text-sm text-left divide-y divide-gray-300 table-fixed'>
         <thead>
           <tr>
             <th className='w-12 font-light'>{index}</th>
-            <th
-              className={`italic text-black ${
-                isFirst ? 'font-semibold' : 'font-light'
-              }`}>
-              {date.toLocaleDateString()}
-            </th>
+            <th className={`italic text-black ${'font-light'}`}>{run.date}</th>
           </tr>
         </thead>
         <tbody className='divide-y divide-gray-300'>
           <tr>
             <td className='mt-1 mb-1 font-light'>Type</td>
             <td className='flex flex-wrap gap-1 pr-2 mt-1 mb-1'>
-              {type === 'Backyard' && (
+              {run.type === 'Backyard' && (
                 <>
-                  <Tag className='bg-blue-200'>{type}</Tag>
-                  <Tag className='bg-blue-100'>{yards} yards</Tag>
+                  <Tag className='bg-blue-200'>{run.type}</Tag>
+                  <Tag className='bg-blue-100'>{run.yards} yards</Tag>
                 </>
               )}
-              {type === 'FKT' && (
+              {run.type === 'FKT' && (
                 <>
-                  <Tag className='bg-fuchsia-200'>{type}</Tag>
-                  <Tag className='bg-fuchsia-100'>{fktType}</Tag>
+                  <Tag className='bg-fuchsia-200'>{run.type}</Tag>
+                  <Tag className='bg-fuchsia-100'>{run.fktType}</Tag>
                 </>
               )}
-              {type === 'Race' && <Tag className='bg-red-200'>{type}</Tag>}
-              {place && <Tag className='bg-red-100'>{place}</Tag>}
+              {run.type === 'Race' && (
+                <Tag className='bg-red-200'>{run.type}</Tag>
+              )}
+              {run.place && <Tag className='bg-red-100'>{run.place}</Tag>}
             </td>
           </tr>
           <tr>
             <td className='font-light'>Name</td>
-            <td className='pr-2'>{course}</td>
+            <td className='pr-2'>{run.course}</td>
           </tr>
           <tr>
             <td className='pr-2 font-light'>Place</td>
-            <td className='pr-2'>{location}</td>
+            <td className='pr-2'>{run.location}</td>
           </tr>
           <tr>
             <td className='pr-2 font-light'>Dist.</td>
-            <td className='pr-2'>{distance}</td>
+            <td className='pr-2'>
+              {run.distance.amount + ' ' + run.distance.unit}
+            </td>
           </tr>
           <tr>
             <td className='pr-2 font-light'>Time</td>
-            <td className='pr-2'>{time}</td>
+            <td className='pr-2'>{`
+            ${run.duration.days ? `${run.duration.days}d` : ''}
+            ${run.duration.hours ? `${run.duration.hours}h` : ''}
+            ${run.duration.minutes ? `${run.duration.minutes}m` : ''}
+            ${run.duration.seconds ? `${run.duration.seconds}s` : ''}
+            `}</td>
           </tr>
           <tr>
             <td className='font-light'>Link</td>
