@@ -8,9 +8,7 @@ const Run: FC<{ index: number; run: IRun }> = ({ index, run }) => {
   }, [run.link]);
 
   return (
-    <div
-      key={index}
-      className={`w-full pb-4 pr-4 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5`}>
+    <div key={index} className={`w-full pb-4 pr-4 sm:w-1/2 lg:w-1/3`}>
       <table className='w-full text-sm text-left divide-y divide-gray-300 table-fixed'>
         <thead>
           <tr>

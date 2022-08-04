@@ -5,7 +5,7 @@ import getUrlFor from '../util/getUrlFor';
 const BlogPost: FC<{ post: any; index: number }> = ({ post, index }) => {
   return (
     <Link
-      className='flex w-full pb-4 pr-4 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5'
+      className='flex w-full pb-4 pr-4 sm:w-1/2 lg:w-1/3'
       to={'/' + post.slug.current}
       key={post.slug.current}>
       <div className='flex flex-col w-full h-full'>
