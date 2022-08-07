@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { CursorContext } from './cursor/CursorProvider';
+import { CursorContext } from '../cursor/CursorProvider';
 
 const Button: FC<{
   href?: string;
@@ -14,8 +14,8 @@ const Button: FC<{
       onMouseLeave={() => setIsHovering(false)}
       onClick={() => onClick?.()}
       className={`${
-        highlight ? 'bg-teal-100' : 'bg-white'
-      } pl-[0.5em] pr-[0.5em] border border-black hover:bg-black hover:text-white rounded-full whitespace-nowrap`}
+        highlight ? `before:content-['⭑_']` : ''
+      } pl-[0.5em] pr-[0.5em] hover:shadow-md transition bg-white hover:bg-blue-200 rounded-full whitespace-nowrap`}
       href={href}
       target='_blank'
       rel='noreferrer'>

@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import useSanityFetch from '../util/useSanityFetch';
+import useSanityFetch from '../../util/useSanityFetch';
+import LoadingSignal from '../common/LoadingSignal';
 import BlogPost from './BlogPost';
-import LoadingSignal from './LoadingSignal';
 
 const BlogPosts: FC = () => {
   const allPostsData = useSanityFetch(

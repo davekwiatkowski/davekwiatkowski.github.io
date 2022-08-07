@@ -5,7 +5,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import HelmetMetaData from '../components/HelmetMetaData';
 import imageUrlBuilder from '@sanity/image-url';
 import useSanityFetch from '../util/useSanityFetch';
-import LoadingSignal from '../components/LoadingSignal';
+import LoadingSignal from '../components/common/LoadingSignal';
 import { CursorContext } from '../components/cursor/CursorProvider';
 
 const builder = imageUrlBuilder(sanityClient);
@@ -67,7 +67,7 @@ const BlogPostPage: FC = () => {
                 <h2 className='pb-4 text-4xl italic font-extralight sm:text-8xl'>
                   {postData.title}
                 </h2>
-                <div className='text-gray-400'>
+                <div className='text-stone-400'>
                   {new Date(postData.publishedAt).toDateString()} | By{' '}
                   <span
                     onMouseEnter={() => setIsHovering(true)}
@@ -85,7 +85,7 @@ const BlogPostPage: FC = () => {
                   alt={postData.mainImage.caption ?? undefined}
                 />
                 {postData.mainImage.caption && (
-                  <figcaption className='text-sm italic text-center text-gray-600'>
+                  <figcaption className='text-sm italic text-center text-stone-600'>
                     {postData.mainImage.caption}
                   </figcaption>
                 )}
@@ -120,7 +120,7 @@ const BlogPostPage: FC = () => {
                               alt={node.caption ?? undefined}
                             />
                             {node.caption && (
-                              <figcaption className='text-sm italic text-center text-gray-600'>
+                              <figcaption className='text-sm italic text-center text-stone-600'>
                                 {node.caption}
                               </figcaption>
                             )}

@@ -5,7 +5,7 @@ import { CursorContext } from './CursorProvider';
 
 const sz = 28;
 const defaultOpacity = '0.5';
-const hoverColor = 'tan';
+const hoverColor = 'gold';
 
 const Cursor: FC = () => {
   const circle = useRef<HTMLDivElement>(null);

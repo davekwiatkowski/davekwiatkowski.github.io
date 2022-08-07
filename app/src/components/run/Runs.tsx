@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import IRun from '../types/IRun';
-import useSanityFetch from '../util/useSanityFetch';
-import LoadingSignal from './LoadingSignal';
+import IRun from '../../types/IRun';
+import useSanityFetch from '../../util/useSanityFetch';
+import LoadingSignal from '../common/LoadingSignal';
 import Run from './Run';
 
 const Runs: FC = () => {
