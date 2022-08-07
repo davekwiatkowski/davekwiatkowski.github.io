@@ -1,4 +1,4 @@
-import { FC, useCallback, useMemo } from 'react';
+import { FC, useCallback, useContext, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import sanityClient from '../constants/sanityClient';
 import BlockContent from '@sanity/block-content-to-react';
@@ -6,6 +6,7 @@ import HelmetMetaData from '../components/HelmetMetaData';
 import imageUrlBuilder from '@sanity/image-url';
 import useSanityFetch from '../util/useSanityFetch';
 import LoadingSignal from '../components/LoadingSignal';
+import { CursorContext } from '../components/Cursor';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source: string) {
@@ -13,6 +14,8 @@ function urlFor(source: string) {
 }
 
 const BlogPostPage: FC = () => {
+  const { setIsHovering } = useContext(CursorContext);
+
   const { slug } = useParams();
   const navigate = useNavigate();
   const postData = useSanityFetch(
@@ -67,7 +70,9 @@ const BlogPostPage: FC = () => {
                 <div className='text-gray-400'>
                   {new Date(postData.publishedAt).toDateString()} | By{' '}
                   <span
-                    className='text-teal-500 cursor-pointer hover:text-teal-600'
+                    onMouseEnter={() => setIsHovering(true)}
+                    onMouseLeave={() => setIsHovering(false)}
+                    className='text-teal-500 hover:text-teal-600'
                     onClick={handleClose}>
                     <span className='underline'>{postData.name}</span>
                   </span>
@@ -91,6 +96,18 @@ const BlogPostPage: FC = () => {
                   projectId={sanityConfig.projectId}
                   dataset={sanityConfig.dataset}
                   serializers={{
+                    marks: {
+                      link: ({ mark, children }) => (
+                        <a
+                          target='_blank'
+                          onMouseEnter={() => setIsHovering(true)}
+                          onMouseLeave={() => setIsHovering(false)}
+                          href={mark.href}
+                          rel='noreferrer'>
+                          {children}
+                        </a>
+                      ),
+                    },
                     types: {
                       image: ({ node }) => {
                         if (!node || !node.asset || !node.asset._ref) {
@@ -116,7 +133,9 @@ const BlogPostPage: FC = () => {
               </div>
               <hr className='mb-4'></hr>
               <div
-                className='text-teal-500 cursor-pointer hover:text-teal-600'
+                onMouseEnter={() => setIsHovering(true)}
+                onMouseLeave={() => setIsHovering(false)}
+                className='text-teal-500 hover:text-teal-600'
                 onClick={handleClose}>
                 <span>← </span>
                 <span className='underline'>Read more by {postData.name}</span>

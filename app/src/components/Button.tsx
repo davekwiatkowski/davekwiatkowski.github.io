@@ -1,12 +1,17 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
+import { CursorContext } from './Cursor';
 
 const Button: FC<{
   href?: string;
   onClick?: () => void;
   highlight?: boolean;
 }> = ({ highlight, href, onClick, children }) => {
+  const { setIsHovering } = useContext(CursorContext);
+
   return (
     <a
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
       onClick={() => onClick?.()}
       className={`${
         highlight ? 'bg-teal-100' : 'bg-white'

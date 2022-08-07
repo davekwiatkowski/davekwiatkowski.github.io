@@ -3,3 +3,8 @@
 @import 'tailwindcss/utilities';
 
 @import './unreset.css';
+
+html,
+body {
+  @apply bg-neutral-100;
+}

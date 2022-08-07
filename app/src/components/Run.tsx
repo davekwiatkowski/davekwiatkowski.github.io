@@ -1,8 +1,11 @@
-import { FC, useCallback } from 'react';
+import { FC, useCallback, useContext } from 'react';
 import IRun from '../types/IRun';
+import { CursorContext } from './Cursor';
 import Tag from './Tag';
 
 const Run: FC<{ index: number; run: IRun }> = ({ index, run }) => {
+  const { setIsHovering } = useContext(CursorContext);
+
   const handleClick = useCallback(() => {
     window.open(run.link);
   }, [run.link]);
@@ -64,7 +67,9 @@ const Run: FC<{ index: number; run: IRun }> = ({ index, run }) => {
           <tr>
             <td className='font-light'>Link</td>
             <td
-              className='flex cursor-pointer hover:bg-gray-100'
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+              className='flex hover:bg-gray-100'
               onClick={handleClick}>
               <div>
                 <span className='underline'>See result</span>
