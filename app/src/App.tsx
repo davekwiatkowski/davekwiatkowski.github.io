@@ -3,7 +3,9 @@ import { HashRouter, Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import BlogPostPage from './pages/BlogPostPage';
 import HelmetMetaData from './components/HelmetMetaData';
-import CursorProvider, { CursorContext } from './components/Cursor';
+import CursorProvider, {
+  CursorContext,
+} from './components/cursor/CursorProvider';
 
 const AppRoutes: FC = () => {
   const { setIsHovering } = useContext(CursorContext);

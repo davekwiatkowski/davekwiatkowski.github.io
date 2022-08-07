@@ -1,6 +1,6 @@
 import { FC, useCallback, useContext } from 'react';
 import IRun from '../types/IRun';
-import { CursorContext } from './Cursor';
+import { CursorContext } from './cursor/CursorProvider';
 import Tag from './Tag';
 
 const Run: FC<{ index: number; run: IRun }> = ({ index, run }) => {

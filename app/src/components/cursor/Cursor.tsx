@@ -1,14 +1,7 @@
-import {
-  createContext,
-  FC,
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
-
 import './Cursor.css';
+
+import { FC, useCallback, useContext, useEffect, useRef } from 'react';
+import { CursorContext } from './CursorProvider';
 
 const sz = 28;
 const defaultOpacity = '0.5';
@@ -87,28 +80,4 @@ const Cursor: FC = () => {
   );
 };
 
-export const CursorContext = createContext({
-  isHovering: false,
-  setIsHovering: (value: boolean) => {},
-});
-
-const CursorProvider: FC = ({ children }) => {
-  const [hovering, setHovering] = useState(false);
-
-  const setIsHovering = useCallback((value: boolean) => {
-    setHovering(value);
-  }, []);
-
-  return (
-    <CursorContext.Provider
-      value={{
-        setIsHovering,
-        isHovering: hovering,
-      }}>
-      {children}
-      <Cursor />
-    </CursorContext.Provider>
-  );
-};
-
-export default CursorProvider;
+export default Cursor;

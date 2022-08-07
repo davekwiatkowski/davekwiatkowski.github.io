@@ -1,5 +1,5 @@
 import { FC, useContext } from 'react';
-import { CursorContext } from './Cursor';
+import { CursorContext } from './cursor/CursorProvider';
 
 const Button: FC<{
   href?: string;

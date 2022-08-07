@@ -6,7 +6,7 @@ import HelmetMetaData from '../components/HelmetMetaData';
 import imageUrlBuilder from '@sanity/image-url';
 import useSanityFetch from '../util/useSanityFetch';
 import LoadingSignal from '../components/LoadingSignal';
-import { CursorContext } from '../components/Cursor';
+import { CursorContext } from '../components/cursor/CursorProvider';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source: string) {

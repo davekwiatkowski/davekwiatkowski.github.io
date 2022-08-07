@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import getUrlFor from '../util/getUrlFor';
-import { CursorContext } from './Cursor';
+import { CursorContext } from './cursor/CursorProvider';
 
 const BlogPost: FC<{ post: any; index: number }> = ({ post, index }) => {
   const { setIsHovering } = useContext(CursorContext);
