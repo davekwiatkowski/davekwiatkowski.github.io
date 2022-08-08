@@ -24,7 +24,6 @@ const BlogPostPage: FC = () => {
       slug,
       body,
       publishedAt,
-      "name": author->name,
       mainImage{
         asset->{
           _id,
@@ -37,7 +36,6 @@ const BlogPostPage: FC = () => {
     { params: { slug }, isOneResult: true }
   );
   const sanityConfig = useMemo(() => sanityClient.config(), []);
-  const hashtag = useMemo(() => 'davekwiatkowski', []);
   const description = useMemo(
     () => postData && `"${postData.title}" by ${postData.name}`,
     [postData]
@@ -60,7 +58,7 @@ const BlogPostPage: FC = () => {
               <HelmetMetaData
                 description={description}
                 title={postData.title}
-                hashtag={`#${hashtag}`}
+                hashtag={`#davekwiatkowski`}
                 image={urlFor(postData.mainImage).url()}
               />
               <div>
@@ -74,7 +72,7 @@ const BlogPostPage: FC = () => {
                     onMouseLeave={() => setIsHovering(false)}
                     className='text-teal-500 hover:text-teal-600'
                     onClick={handleClose}>
-                    <span className='underline'>{postData.name}</span>
+                    <span className='underline'>Dave Kwiatkowski</span>
                   </span>
                 </div>
               </div>
@@ -114,7 +112,7 @@ const BlogPostPage: FC = () => {
                           return null;
                         }
                         return (
-                          <figure>
+                          <figure className='mb-4'>
                             <img
                               src={urlFor(node).url()}
                               alt={node.caption ?? undefined}
