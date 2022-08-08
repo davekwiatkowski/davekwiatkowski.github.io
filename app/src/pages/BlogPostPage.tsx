@@ -37,7 +37,7 @@ const BlogPostPage: FC = () => {
   );
   const sanityConfig = useMemo(() => sanityClient.config(), []);
   const description = useMemo(
-    () => postData && `"${postData.title}" by ${postData.name}`,
+    () => postData && `"${postData.title}" by Dave Kwiatkowski`,
     [postData]
   );
 
@@ -136,7 +136,7 @@ const BlogPostPage: FC = () => {
                 className='text-teal-500 hover:text-teal-600'
                 onClick={handleClose}>
                 <span>← </span>
-                <span className='underline'>Read more by {postData.name}</span>
+                <span className='underline'>Read more by Dave Kwiatkowski</span>
               </div>
             </>
           ) : (
