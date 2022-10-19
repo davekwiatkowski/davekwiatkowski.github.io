@@ -1,11 +1,9 @@
-import { FC, useCallback, useContext } from 'react';
+import { FC, useCallback } from 'react';
 import IRun from '../../types/IRun';
-import { CursorContext } from '../cursor/CursorProvider';
+import toOrdinal from '../../util/toOrdinal';
 import Tag from '../common/Tag';
 
 const Run: FC<{ index: number; run: IRun }> = ({ index, run }) => {
-  const { setIsHovering } = useContext(CursorContext);
-
   const handleClick = useCallback(() => {
     window.open(run.link);
   }, [run.link]);
@@ -26,19 +24,22 @@ const Run: FC<{ index: number; run: IRun }> = ({ index, run }) => {
               {run.type === 'Backyard' && (
                 <>
                   <Tag className='bg-sky-200'>{run.type}</Tag>
-                  <Tag className='bg-sky-100'>{run.yards} yards</Tag>
+                  <Tag className='bg-sky-100'>{run.backyard?.yards} yards</Tag>
+                  <Tag className='bg-sky-50'>{run.backyard?.place}</Tag>
                 </>
               )}
               {run.type === 'FKT' && (
                 <>
                   <Tag className='bg-fuchsia-200'>{run.type}</Tag>
-                  <Tag className='bg-fuchsia-100'>{run.fktType}</Tag>
+                  <Tag className='bg-fuchsia-100'>{run.fkt?.type}</Tag>
                 </>
               )}
               {run.type === 'Race' && (
-                <Tag className='bg-red-200'>{run.type}</Tag>
+                <>
+                  <Tag className='bg-red-200'>{run.type}</Tag>
+                  <Tag className='bg-red-100'>{toOrdinal(run.race?.place)}</Tag>
+                </>
               )}
-              {run.place && <Tag className='bg-red-100'>{run.place}</Tag>}
             </td>
           </tr>
           <tr>
@@ -67,9 +68,7 @@ const Run: FC<{ index: number; run: IRun }> = ({ index, run }) => {
           <tr>
             <td className='font-light'>Link</td>
             <td
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-              className='flex hover:bg-stone-100'
+              className='flex cursor-pointer hover:bg-stone-100'
               onClick={handleClick}>
               <div>
                 <span className='underline'>See result</span>

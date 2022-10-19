@@ -22,9 +22,16 @@ const Runs: FC = () => {
         unit,
       },
       type,
-      fktType,
-      yards,
-      place,
+      race{
+        place,
+      },
+      fkt{
+        type,
+      },
+      backyard{
+        yards,
+        place,
+      },
     }`
   );
 

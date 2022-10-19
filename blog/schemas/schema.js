@@ -10,6 +10,9 @@ import post from './post';
 import run from './run';
 import distance from './distance';
 import duration from './duration';
+import backyard from './backyard';
+import fkt from './fkt';
+import race from './race';
 
 // Then we give our schema to the builder and provide the result to Sanity
 const schema = createSchema({
@@ -27,6 +30,9 @@ const schema = createSchema({
     run,
     distance,
     duration,
+    backyard,
+    fkt,
+    race,
   ]),
 });
 

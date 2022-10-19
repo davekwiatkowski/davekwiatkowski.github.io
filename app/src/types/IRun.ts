@@ -5,10 +5,17 @@ interface IRun {
   location: string;
   distance: { amount: number; unit: string };
   duration: { days: number; hours: number; minutes: number; seconds: number };
-  place?: string;
   type: 'Backyard' | 'Race' | 'FKT';
-  fktType?: 'Unsupported';
-  yards?: number;
+  race?: {
+    place: number;
+  };
+  fkt?: {
+    type: 'Unsupported' | 'Self-supported' | 'Supported';
+  };
+  backyard?: {
+    yards: number;
+    place: 'Win' | 'Assist' | 'Dnf';
+  };
 }
 
 export default IRun;

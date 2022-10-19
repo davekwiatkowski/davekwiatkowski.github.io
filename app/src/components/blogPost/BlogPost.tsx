@@ -1,11 +1,8 @@
-import { FC, useContext } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import getUrlFor from '../../util/getUrlFor';
-import { CursorContext } from '../cursor/CursorProvider';
 
 const BlogPost: FC<{ post: any; index: number }> = ({ post, index }) => {
-  const { setIsHovering } = useContext(CursorContext);
-
   return (
     <div className='flex flex-col w-full pb-4 pr-4 sm:w-1/2 lg:w-1/3'>
       <h2
@@ -15,8 +12,6 @@ const BlogPost: FC<{ post: any; index: number }> = ({ post, index }) => {
         {new Date(post.publishedAt).toDateString()}
       </h2>
       <Link
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
         className='w-full'
         to={'/' + post.slug.current}
         key={post.slug.current}>

@@ -1,4 +1,4 @@
-import { FC, useCallback, useContext, useMemo } from 'react';
+import { FC, useCallback, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import sanityClient from '../constants/sanityClient';
 import BlockContent from '@sanity/block-content-to-react';
@@ -6,7 +6,6 @@ import HelmetMetaData from '../components/HelmetMetaData';
 import imageUrlBuilder from '@sanity/image-url';
 import useSanityFetch from '../util/useSanityFetch';
 import LoadingSignal from '../components/common/LoadingSignal';
-import { CursorContext } from '../components/cursor/CursorProvider';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source: string) {
@@ -14,8 +13,6 @@ function urlFor(source: string) {
 }
 
 const BlogPostPage: FC = () => {
-  const { setIsHovering } = useContext(CursorContext);
-
   const { slug } = useParams();
   const navigate = useNavigate();
   const postData = useSanityFetch(
@@ -68,8 +65,6 @@ const BlogPostPage: FC = () => {
                 <div className='text-stone-400'>
                   {new Date(postData.publishedAt).toDateString()} | By{' '}
                   <span
-                    onMouseEnter={() => setIsHovering(true)}
-                    onMouseLeave={() => setIsHovering(false)}
                     className='text-teal-500 hover:text-teal-600'
                     onClick={handleClose}>
                     <span className='underline'>Dave Kwiatkowski</span>
@@ -96,12 +91,7 @@ const BlogPostPage: FC = () => {
                   serializers={{
                     marks: {
                       link: ({ mark, children }) => (
-                        <a
-                          target='_blank'
-                          onMouseEnter={() => setIsHovering(true)}
-                          onMouseLeave={() => setIsHovering(false)}
-                          href={mark.href}
-                          rel='noreferrer'>
+                        <a target='_blank' href={mark.href} rel='noreferrer'>
                           {children}
                         </a>
                       ),
@@ -131,8 +121,6 @@ const BlogPostPage: FC = () => {
               </div>
               <hr className='mb-4'></hr>
               <div
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
                 className='text-teal-500 hover:text-teal-600'
                 onClick={handleClose}>
                 <span>← </span>

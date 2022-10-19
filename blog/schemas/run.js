@@ -50,42 +50,22 @@ const run = {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'fktType',
-      title: 'FKT type',
-      type: 'string',
-      options: {
-        list: ['Supported', 'Self-supported', 'Unsupported'],
-        layout: 'dropdown',
-      },
-      hidden: ({ parent }) => parent.type !== 'FKT',
-      validation: (Rule) =>
-        Rule.custom((value, context) =>
-          context.document.type === 'FKT' && !value ? 'This is required.' : true
-        ),
-    },
-    {
-      name: 'yards',
-      title: 'Yards',
-      type: 'number',
+      name: 'backyard',
+      title: 'Backyard',
+      type: 'backyard',
       hidden: ({ parent }) => parent.type !== 'Backyard',
-      validation: (Rule) =>
-        Rule.custom((value, context) =>
-          context.document.type === 'Backyard' && !value
-            ? 'This is required.'
-            : true
-        ),
     },
     {
-      name: 'place',
-      title: 'Place',
-      type: 'number',
+      name: 'race',
+      title: 'Race',
+      type: 'race',
       hidden: ({ parent }) => parent.type !== 'Race',
-      validation: (Rule) =>
-        Rule.custom((value, context) =>
-          context.document.type === 'Race' && !value
-            ? 'This is required.'
-            : true
-        ),
+    },
+    {
+      name: 'fkt',
+      title: 'FKT',
+      type: 'fkt',
+      hidden: ({ parent }) => parent.type !== 'FKT',
     },
   ],
 };
