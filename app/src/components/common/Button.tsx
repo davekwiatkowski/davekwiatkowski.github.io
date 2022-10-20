@@ -9,7 +9,7 @@ const Button: FC<{
     <a
       className={`${
         highlight ? `before:content-['⭑_']` : ''
-      } pl-[0.5em] pr-[0.5em] hover:shadow-md transition bg-white hover:bg-blue-200 rounded-full whitespace-nowrap`}
+      } whitespace-nowrap underline hover:opacity-100 opacity-50 transition-opacity`}
       href={href}
       target='_blank'
       rel='noreferrer'>

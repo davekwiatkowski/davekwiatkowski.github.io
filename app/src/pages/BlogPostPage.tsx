@@ -65,7 +65,7 @@ const BlogPostPage: FC = () => {
                 <div className='text-stone-400'>
                   {new Date(postData.publishedAt).toDateString()} | By{' '}
                   <span
-                    className='text-teal-500 hover:text-teal-600'
+                    className='text-teal-500 cursor-pointer hover:text-teal-600'
                     onClick={handleClose}>
                     <span className='underline'>Dave Kwiatkowski</span>
                   </span>
@@ -91,7 +91,11 @@ const BlogPostPage: FC = () => {
                   serializers={{
                     marks: {
                       link: ({ mark, children }) => (
-                        <a target='_blank' href={mark.href} rel='noreferrer'>
+                        <a
+                          target='_blank'
+                          href={mark.href}
+                          rel='noreferrer'
+                          className='cursor-pointer'>
                           {children}
                         </a>
                       ),
@@ -121,7 +125,7 @@ const BlogPostPage: FC = () => {
               </div>
               <hr className='mb-4'></hr>
               <div
-                className='text-teal-500 hover:text-teal-600'
+                className='text-teal-500 cursor-pointer hover:text-teal-600'
                 onClick={handleClose}>
                 <span>← </span>
                 <span className='underline'>Read more by Dave Kwiatkowski</span>

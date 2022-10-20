@@ -17,7 +17,7 @@ const BlogPost: FC<{ post: any; index: number }> = ({ post, index }) => {
         key={post.slug.current}>
         <div
           className={`flex flex-row h-full hover:shadow-xl rounded-3xl transition hover:bg-blue-200 ${
-            index === 0 ? 'bg-orange-100' : 'bg-white'
+            index === 0 ? 'bg-blue-100' : 'bg-white'
           }`}>
           <img
             src={getUrlFor(post.mainImage).url()}

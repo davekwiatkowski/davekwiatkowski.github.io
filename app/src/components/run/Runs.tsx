@@ -36,7 +36,7 @@ const Runs: FC = () => {
   );
 
   return (
-    <div className='p-4'>
+    <div>
       <div className='flex flex-row flex-wrap max-w-screen-xl'>
         {allRunsData ? (
           allRunsData

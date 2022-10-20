@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       colors: {
         BG: '#f3f0f0',
+        ACCENT: '#00aaff',
       },
     },
     fontSize: {
