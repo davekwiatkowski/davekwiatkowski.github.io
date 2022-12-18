@@ -1,16 +1,16 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        BG: '#f3f0f0',
-        ACCENT: '#00aaff',
+        BG: "#f3f0f0",
+        ACCENT: "#00aaff",
       },
     },
     fontSize: {
-      display: '20vw',
+      display: "20vw",
       ...defaultTheme.fontSize,
     },
   },

@@ -1,8 +1,8 @@
-import { FC } from 'react';
-import IRun from '../../types/IRun';
-import useSanityFetch from '../../util/useSanityFetch';
-import LoadingSignal from '../common/LoadingSignal';
-import Run from './Run';
+import { FC } from "react";
+import IRun from "../../types/IRun";
+import useSanityFetch from "../../util/useSanityFetch";
+import LoadingSignal from "../common/LoadingSignal";
+import Run from "./Run";
 
 const Runs: FC = () => {
   const allRunsData = useSanityFetch(
@@ -37,7 +37,7 @@ const Runs: FC = () => {
 
   return (
     <div>
-      <div className='flex flex-row flex-wrap max-w-screen-xl'>
+      <div className="flex flex-row flex-wrap max-w-screen-xl">
         {allRunsData ? (
           allRunsData
             .sort(

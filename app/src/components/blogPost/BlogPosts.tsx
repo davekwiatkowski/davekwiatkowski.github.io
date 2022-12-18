@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import useSanityFetch from '../../util/useSanityFetch';
-import LoadingSignal from '../common/LoadingSignal';
-import BlogPost from './BlogPost';
+import { FC } from "react";
+import useSanityFetch from "../../util/useSanityFetch";
+import LoadingSignal from "../common/LoadingSignal";
+import BlogPost from "./BlogPost";
 
 const BlogPosts: FC = () => {
   const allPostsData = useSanityFetch(
@@ -21,7 +21,7 @@ const BlogPosts: FC = () => {
 
   return (
     <div>
-      <div className='flex flex-row flex-wrap max-w-screen-xl'>
+      <div className="flex flex-row flex-wrap max-w-screen-xl">
         {allPostsData ? (
           allPostsData
             .sort(

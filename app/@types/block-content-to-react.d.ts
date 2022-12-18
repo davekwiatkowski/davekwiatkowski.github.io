@@ -1,5 +1,5 @@
-declare module '@sanity/block-content-to-react' {
-  import * as React from 'react';
+declare module "@sanity/block-content-to-react" {
+  import * as React from "react";
 
   export interface BlockContentProps {
     /**
