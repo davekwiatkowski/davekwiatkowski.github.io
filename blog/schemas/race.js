@@ -7,8 +7,7 @@ const race = {
       name: 'place',
       title: 'Place',
       type: 'number',
-      validation: (Rule) =>
-        Rule.custom((value) => (!value ? 'This is required.' : true)),
+      validation: (Rule) => Rule.custom((value) => (!value ? 'This is required.' : true)),
     },
   ],
 };

@@ -11,10 +11,7 @@ const fkt = {
         list: ['Supported', 'Self-supported', 'Unsupported'],
         layout: 'dropdown',
       },
-      validation: (Rule) =>
-        Rule.custom((value, context) =>
-          context.document.type === 'FKT' && !value ? 'This is required.' : true
-        ),
+      validation: (Rule) => Rule.custom((value, context) => (context.document.type === 'FKT' && !value ? 'This is required.' : true)),
     },
   ],
 };

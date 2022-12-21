@@ -1,11 +1,7 @@
 {
     "extends": [
-        "airbnb",
-        "airbnb-typescript"
+        "airbnb"
     ],
-    "parserOptions": {
-        "project": "**/tsconfig.json"
-    },
     "rules": {
         "react/function-component-definition": "off",
         "react/react-in-jsx-scope": "off",
@@ -14,5 +10,19 @@
         "react/require-default-props": "off",
         "jsx-a11y/no-noninteractive-element-interactions": "off",
         "no-underscore-dangle": "off"
-    }
+    },
+    "overrides": [
+        {
+            "extends": [
+                "airbnb-typescript"
+            ],
+            "files": [
+                "*.ts",
+                "*.tsx"
+            ],
+            "parserOptions": {
+                "project": "**/tsconfig.json"
+            },
+        }
+    ]
 }

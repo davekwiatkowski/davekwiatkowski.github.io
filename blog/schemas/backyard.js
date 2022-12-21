@@ -7,8 +7,7 @@ const backyard = {
       name: 'yards',
       title: 'Yards',
       type: 'number',
-      validation: (Rule) =>
-        Rule.custom((value) => (!value ? 'This is required.' : true)),
+      validation: (Rule) => Rule.custom((value) => (!value ? 'This is required.' : true)),
     },
     {
       name: 'place',
@@ -18,8 +17,7 @@ const backyard = {
         list: ['Win', 'Assist', 'DNF'],
         layout: 'dropdown',
       },
-      validation: (Rule) =>
-        Rule.custom((value) => (!value ? 'This is required.' : true)),
+      validation: (Rule) => Rule.custom((value) => (!value ? 'This is required.' : true)),
     },
   ],
 };
