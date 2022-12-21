@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import urlConstants from '../constants/urlConstants';
 import Button from '../components/common/Button';
-import BlogPosts from '../components/blogPost/BlogPosts';
-import Runs from '../components/run/Runs';
+import PostList from '../components/postList/PostList';
+import RunList from '../components/runList/RunList';
 import Tabs from '../components/common/tabs/Tabs';
 import Tab from '../components/common/tabs/Tab';
 
@@ -42,10 +42,10 @@ const HomePage: FC = () => (
       </div>
       <Tabs>
         <Tab label="blog">
-          <BlogPosts />
+          <PostList />
         </Tab>
         <Tab label="runs">
-          <Runs />
+          <RunList />
         </Tab>
       </Tabs>
     </div>

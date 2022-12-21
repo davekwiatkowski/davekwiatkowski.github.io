@@ -1,9 +1,9 @@
 import { FC, useCallback } from 'react';
-import IRun from '../../interfaces/IRun';
+import { IRunListItemData } from '../../util/data/useRunListData';
 import toOrdinal from '../../util/toOrdinal';
 import Tag from '../common/Tag';
 
-const Run: FC<{ index: number; run: IRun }> = ({ index, run }) => {
+const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run }) => {
   const handleClick = useCallback(() => {
     window.open(run.link);
   }, [run.link]);
@@ -89,4 +89,4 @@ const Run: FC<{ index: number; run: IRun }> = ({ index, run }) => {
   );
 };
 
-export default Run;
+export default RunListItem;

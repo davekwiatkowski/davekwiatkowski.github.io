@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import IPost from '../../interfaces/IPost';
 import getUrlFor from '../../util/getUrlFor';
+import { IPostListItemData } from '../../util/data/usePostListData';
 
-const BlogPost: FC<{ post: IPost; index: number }> = ({ post, index }) => (
+const PostListItem: FC<{ post: IPostListItemData; index: number }> = ({ post, index }) => (
   <div className="flex flex-col w-full pb-4 pr-4 sm:w-1/2 lg:w-1/3">
     <h2
       className={`pb-1 text-sm italic ${
@@ -35,4 +35,4 @@ const BlogPost: FC<{ post: IPost; index: number }> = ({ post, index }) => (
   </div>
 );
 
-export default BlogPost;
+export default PostListItem;

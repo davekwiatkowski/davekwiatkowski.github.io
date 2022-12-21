@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-const BlogPostPageLink: FC<{ mark: any }> = ({ mark, children }) => (
+const PostPageLink: FC<{ mark: any }> = ({ mark, children }) => (
   <a
     target="_blank"
     href={mark.href}
@@ -11,4 +11,4 @@ const BlogPostPageLink: FC<{ mark: any }> = ({ mark, children }) => (
   </a>
 );
 
-export default BlogPostPageLink;
+export default PostPageLink;

@@ -2,33 +2,18 @@ import { FC, useCallback, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import BlockContent from '@sanity/block-content-to-react';
 import sanityClient from '../constants/sanityClient';
-import useSanityFetch from '../util/useSanityFetch';
 import LoadingSignal from '../components/common/LoadingSignal';
-import BlogPostPageImage from '../components/blogPostPage/BlogPostPageImage';
-import BlogPostPageLink from '../components/blogPostPage/BlogPostPageLink';
+import PostPageImage from '../components/postPage/PostPageImage';
+import PostPageLink from '../components/postPage/PostPageLink';
 import getUrlFor from '../util/getUrlFor';
+import usePostData from '../util/data/usePostData';
 
-const BlogPostPage: FC = () => {
+const PostPage: FC = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const postData = useSanityFetch(
-    `*[slug.current == $slug]{
-      title,
-      slug,
-      body,
-      publishedAt,
-      mainImage{
-        asset->{
-          _id,
-          url
-        },
-        crop,
-        caption
-      }
-    }`,
-    { params: { slug }, isOneResult: true },
-  );
+  const postData = usePostData(slug);
   const sanityConfig = useMemo(() => sanityClient.config(), []);
+
   const handleClose = useCallback(
     (event: any) => {
       event.preventDefault();
@@ -79,10 +64,10 @@ const BlogPostPage: FC = () => {
                   dataset={sanityConfig.dataset}
                   serializers={{
                     marks: {
-                      link: BlogPostPageLink,
+                      link: PostPageLink,
                     },
                     types: {
-                      image: BlogPostPageImage,
+                      image: PostPageImage,
                     },
                   }}
                 />
@@ -110,4 +95,4 @@ const BlogPostPage: FC = () => {
   );
 };
 
-export default BlogPostPage;
+export default PostPage;

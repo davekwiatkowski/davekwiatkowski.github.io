@@ -5,6 +5,7 @@ import TabLabel from './TabLabel';
 
 const Tabs: FC<{ children: ReactElement[] }> = ({ children }) => {
   const [activeTab, setActiveTab] = useState(children[0].props.label);
+
   const handleTabClick = useCallback((tab: string) => {
     setActiveTab(tab);
   }, []);

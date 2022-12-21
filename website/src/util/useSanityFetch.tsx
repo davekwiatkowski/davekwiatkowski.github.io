@@ -17,6 +17,7 @@ const useSanityFetch = (
     () => (isOneResult ? data?.[0] : data),
     [data, isOneResult],
   );
+
   return useMemo(() => result, [result]);
 };
 

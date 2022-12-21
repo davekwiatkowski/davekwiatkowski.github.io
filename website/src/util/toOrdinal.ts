@@ -11,6 +11,7 @@ function toOrdinal(num: number | undefined): string {
   if (!num) {
     return '';
   }
+
   const category = englishOrdinalRules.select(num);
   const suffix = suffixes[category];
   return num + suffix;

@@ -1,10 +1,12 @@
 import { FC } from 'react';
 import getUrlFor from '../../util/getUrlFor';
+import { PostImageData } from '../../util/data/usePostData';
 
-const BlogPostPageImage:FC<{ node: any }> = ({ node }) => {
+const PostPageImage:FC<{ node: PostImageData }> = ({ node }) => {
   if (!node || !node.asset || !node.asset._ref) {
     return null;
   }
+
   return (
     <figure className="mb-4">
       <img
@@ -20,4 +22,4 @@ const BlogPostPageImage:FC<{ node: any }> = ({ node }) => {
   );
 };
 
-export default BlogPostPageImage;
+export default PostPageImage;
