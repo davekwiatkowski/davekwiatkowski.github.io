@@ -1,10 +1,12 @@
-import { FC, useCallback, useMemo } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import sanityClient from "../constants/sanityClient";
-import BlockContent from "@sanity/block-content-to-react";
-import imageUrlBuilder from "@sanity/image-url";
-import useSanityFetch from "../util/useSanityFetch";
-import LoadingSignal from "../components/common/LoadingSignal";
+import { FC, useCallback, useMemo } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import BlockContent from '@sanity/block-content-to-react';
+import imageUrlBuilder from '@sanity/image-url';
+import sanityClient from '../constants/sanityClient';
+import useSanityFetch from '../util/useSanityFetch';
+import LoadingSignal from '../components/common/LoadingSignal';
+import BlogPostPageImage from '../components/blogPostPage/BlogPostPageImage';
+import BlogPostPageLink from '../components/blogPostPage/BlogPostPageLink';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source: string) {
@@ -29,15 +31,15 @@ const BlogPostPage: FC = () => {
         caption
       }
     }`,
-    { params: { slug }, isOneResult: true }
+    { params: { slug }, isOneResult: true },
   );
   const sanityConfig = useMemo(() => sanityClient.config(), []);
   const handleClose = useCallback(
     (event: any) => {
       event.preventDefault();
-      navigate("/");
+      navigate('/');
     },
-    [navigate]
+    [navigate],
   );
 
   return (
@@ -51,11 +53,15 @@ const BlogPostPage: FC = () => {
                   {postData.title}
                 </h2>
                 <div className="text-stone-400">
-                  {new Date(postData.publishedAt).toDateString()} | By{" "}
+                  {new Date(postData.publishedAt).toDateString()}
+                  {' | By '}
                   <span
                     className="text-teal-500 cursor-pointer hover:text-teal-600"
-                    onClick={handleClose}>
-                    <span className="underline">Dave Kwiatkowski</span>
+                    onClick={handleClose}
+                  >
+                    <span className="underline">
+                      Dave Kwiatkowski
+                    </span>
                   </span>
                 </div>
               </div>
@@ -78,45 +84,26 @@ const BlogPostPage: FC = () => {
                   dataset={sanityConfig.dataset}
                   serializers={{
                     marks: {
-                      link: ({ mark, children }) => (
-                        <a
-                          target="_blank"
-                          href={mark.href}
-                          rel="noreferrer"
-                          className="cursor-pointer">
-                          {children}
-                        </a>
-                      ),
+                      link: BlogPostPageLink,
                     },
                     types: {
-                      image: ({ node }) => {
-                        if (!node || !node.asset || !node.asset._ref) {
-                          return null;
-                        }
-                        return (
-                          <figure className="mb-4">
-                            <img
-                              src={urlFor(node).url()}
-                              alt={node.caption ?? undefined}
-                            />
-                            {node.caption && (
-                              <figcaption className="text-sm italic text-center text-stone-600">
-                                {node.caption}
-                              </figcaption>
-                            )}
-                          </figure>
-                        );
-                      },
+                      image: BlogPostPageImage,
                     },
                   }}
                 />
               </div>
-              <hr className="mb-4"></hr>
+              <hr className="mb-4" />
               <div
                 className="text-teal-500 cursor-pointer hover:text-teal-600"
-                onClick={handleClose}>
-                <span>← </span>
-                <span className="underline">Read more by Dave Kwiatkowski</span>
+                onClick={handleClose}
+              >
+                <span>
+                  ←
+                  {' '}
+                </span>
+                <span className="underline">
+                  Read more by Dave Kwiatkowski
+                </span>
               </div>
             </>
           ) : (

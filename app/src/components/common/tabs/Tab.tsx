@@ -1,7 +1,5 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-const Tab: FC<{ label: string }> = ({ children }) => {
-  return <div>{children}</div>;
-};
+const Tab: FC<{ label: string }> = ({ children, label }) => <div id={label}>{children}</div>;
 
 export default Tab;

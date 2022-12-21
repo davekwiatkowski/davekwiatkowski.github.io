@@ -1,5 +1,7 @@
-import { FC, ReactElement, useCallback, useState } from "react";
-import TabLabel from "./TabLabel";
+import {
+  FC, ReactElement, useCallback, useState,
+} from 'react';
+import TabLabel from './TabLabel';
 
 const Tabs: FC<{ children: ReactElement[] }> = ({ children }) => {
   const [activeTab, setActiveTab] = useState(children[0].props.label);
@@ -17,7 +19,8 @@ const Tabs: FC<{ children: ReactElement[] }> = ({ children }) => {
               key={label}
               label={label}
               activeTab={activeTab}
-              onClick={handleTabClick}></TabLabel>
+              onClick={handleTabClick}
+            />
           );
         })}
       </div>

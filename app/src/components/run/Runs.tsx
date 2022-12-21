@@ -1,8 +1,8 @@
-import { FC } from "react";
-import IRun from "../../types/IRun";
-import useSanityFetch from "../../util/useSanityFetch";
-import LoadingSignal from "../common/LoadingSignal";
-import Run from "./Run";
+import { FC } from 'react';
+import IRun from '../../interfaces/IRun';
+import useSanityFetch from '../../util/useSanityFetch';
+import LoadingSignal from '../common/LoadingSignal';
+import Run from './Run';
 
 const Runs: FC = () => {
   const allRunsData = useSanityFetch(
@@ -32,7 +32,7 @@ const Runs: FC = () => {
         yards,
         place,
       },
-    }`
+    }`,
   );
 
   return (
@@ -41,8 +41,7 @@ const Runs: FC = () => {
         {allRunsData ? (
           allRunsData
             .sort(
-              (a: IRun, b: IRun) =>
-                new Date(b.date).getTime() - new Date(a.date).getTime()
+              (a: IRun, b: IRun) => new Date(b.date).getTime() - new Date(a.date).getTime(),
             )
             .map((run: IRun, index: number) => (
               <Run

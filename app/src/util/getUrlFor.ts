@@ -1,7 +1,5 @@
-import sanityImageUrlBuilder from "../constants/sanityImageUrlBuilder";
+import sanityImageUrlBuilder from '../constants/sanityImageUrlBuilder';
 
-const getUrlFor = (sanitySource: string) => {
-  return sanityImageUrlBuilder.image(sanitySource);
-};
+const getUrlFor = (sanitySource: string) => sanityImageUrlBuilder.image(sanitySource);
 
 export default getUrlFor;

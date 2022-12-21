@@ -1,5 +1,5 @@
-declare module "@sanity/block-content-to-react" {
-  import * as React from "react";
+declare module '@sanity/block-content-to-react' {
+  import * as React from 'react';
 
   export interface BlockContentProps {
     /**
@@ -9,7 +9,8 @@ declare module "@sanity/block-content-to-react" {
      */
     blocks: any[] | any;
     /**
-     * When more than one block is given, a container node has to be created. Passing a className will pass it on to the container.
+     * When more than one block is given, a container node has to be created.
+     * Passing a className will pass it on to the container.
      * @note see `renderContainerOnSingleChild`
      */
     className?: string;

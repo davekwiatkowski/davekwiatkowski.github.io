@@ -1,4 +1,4 @@
-import { FC, useCallback } from "react";
+import { FC, useCallback } from 'react';
 
 const TabLabel: FC<{
   label: string;
@@ -11,10 +11,11 @@ const TabLabel: FC<{
     <div
       className={`cursor-pointer transition-all select-none capitalize border-b-2 ${
         label === activeTab
-          ? "text-blue-500 border-blue-500 opacity-100"
-          : "text-black border-black opacity-50"
+          ? 'text-blue-500 border-blue-500 opacity-100'
+          : 'text-black border-black opacity-50'
       }`}
-      onClick={handleClick}>
+      onClick={handleClick}
+    >
       {label}
     </div>
   );
