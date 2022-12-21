@@ -2,10 +2,10 @@
 
 Personal website for Dave Kwiatkowski
 
-## Apps
+## Workspaces
 
-- `/app`
+- `/website`
   The website
 
-- `/blog`
-  The sanity API for the blog
+- `/sanity`
+  The sanity API for the Sanity blog

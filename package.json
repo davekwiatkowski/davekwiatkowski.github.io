@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "app",
-    "blog"
+    "website",
+    "sanity"
   ],
   "scripts": {
     "start": "yarn workspaces foreach --parallel --verbose run start",

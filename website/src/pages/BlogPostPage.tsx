@@ -1,17 +1,12 @@
 import { FC, useCallback, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import BlockContent from '@sanity/block-content-to-react';
-import imageUrlBuilder from '@sanity/image-url';
 import sanityClient from '../constants/sanityClient';
 import useSanityFetch from '../util/useSanityFetch';
 import LoadingSignal from '../components/common/LoadingSignal';
 import BlogPostPageImage from '../components/blogPostPage/BlogPostPageImage';
 import BlogPostPageLink from '../components/blogPostPage/BlogPostPageLink';
-
-const builder = imageUrlBuilder(sanityClient);
-function urlFor(source: string) {
-  return builder.image(source);
-}
+import getUrlFor from '../util/getUrlFor';
 
 const BlogPostPage: FC = () => {
   const { slug } = useParams();
@@ -68,7 +63,7 @@ const BlogPostPage: FC = () => {
               <hr className="mt-4 mb-4" />
               <figure>
                 <img
-                  src={urlFor(postData.mainImage).url()}
+                  src={getUrlFor(postData.mainImage).url()}
                   alt={postData.mainImage.caption ?? undefined}
                 />
                 {postData.mainImage.caption && (
