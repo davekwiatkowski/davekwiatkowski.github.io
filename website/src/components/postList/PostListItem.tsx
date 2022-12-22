@@ -11,7 +11,7 @@ const PostListItem: FC<{ post: IPostListItemData; index: number }> = ({ post, in
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <div className="flex flex-col w-full sm:w-1/2 lg:w-1/3">
+    <div className="flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
       <Link
         className="w-full relative outline outline-1 outline-PRIMARY"
         to={`/${slug}`}
@@ -26,11 +26,11 @@ const PostListItem: FC<{ post: IPostListItemData; index: number }> = ({ post, in
         <img
           src={imageSrc}
           alt={title}
-          className="w-full h-[200px] mb-[5rem] object-cover shrink-0"
+          className="w-full h-[200px] lg:h-[300px] mb-[7rem] object-cover shrink-0"
         />
-        <div className={`absolute bottom-0 bg-BG w-full p-4 transition-all duration-300 ${!isHovering ? 'h-full text-2xl' : 'h-[5rem]'}`}>
+        <div className={`absolute bottom-0 bg-BG w-full p-4 transition-all duration-300 ${!isHovering ? 'h-full text-4xl' : 'h-[7rem]'}`}>
           <div className="flex justify-between">
-            <div className={`font-bold text-PRIMARY ${isHovering ? '' : 'text-5xl'}`}>{title}</div>
+            <div className="font-bold text-PRIMARY">{title}</div>
             <div className="text-TEXT_DE_EMP font-extralight">
               #
               {index + 1}
