@@ -30,7 +30,7 @@ const PostListItem: FC<{ post: IPostListItemData; index: number }> = ({ post, in
         />
         <div className={`absolute bottom-0 bg-BG w-full p-4 transition-all duration-300 ${!isHovering ? 'h-full text-2xl' : 'h-[5rem]'}`}>
           <div className="flex justify-between">
-            <div className={`font-black text-PRIMARY ${isHovering ? '' : 'text-5xl'}`}>{title}</div>
+            <div className={`font-bold text-PRIMARY ${isHovering ? '' : 'text-5xl'}`}>{title}</div>
             <div className="text-TEXT_DE_EMP font-extralight">
               #
               {index + 1}
