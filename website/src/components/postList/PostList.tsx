@@ -19,7 +19,7 @@ const PostList: FC = () => {
               <PostListItem
                 key={post.publishedAt}
                 post={post}
-                index={index}
+                index={postListData.length - 1 - index}
               />
             ))
         ) : (

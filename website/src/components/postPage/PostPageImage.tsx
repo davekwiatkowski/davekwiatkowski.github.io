@@ -14,7 +14,7 @@ const PostPageImage:FC<{ node: PostImageData }> = ({ node }) => {
         alt={node.caption ?? undefined}
       />
       {node.caption && (
-      <figcaption className="text-sm italic text-center text-stone-600">
+      <figcaption className="text-sm italic text-center text-TEXT_DE_EMP">
         {node.caption}
       </figcaption>
       )}

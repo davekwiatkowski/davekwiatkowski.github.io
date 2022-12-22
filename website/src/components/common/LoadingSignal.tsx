@@ -3,7 +3,7 @@ import { FC } from 'react';
 const LoadingSignal: FC = () => (
   <svg
     role="status"
-    className="w-8 h-8 mr-2 text-stone-200 animate-spin fill-stone-600 dark:text-stone-600"
+    className="w-8 h-8 mr-2 text-PRIMARY animate-spin fill-PRIMARY"
     viewBox="0 0 100 101"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

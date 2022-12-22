@@ -10,11 +10,11 @@ const HomePage: FC = () => (
   <div className="flex justify-center w-full pt-4 pb-4 md:pt-12 md:pb-12">
     <div className="w-full max-w-7xl">
       <div className="flex flex-row flex-wrap h-auto gap-4 pt-4 pb-4 pl-4 pr-4 md:pt-0 md:pb-0 sm:flex-nowrap">
-        <h1 className="w-full text-3xl text-left sm:text-4xl sm:w-1/2 lg:w-1/3">
+        <h1 className="w-full font-thin text-3xl text-left sm:text-5xl md:text-6xl lg:text-8xl sm:w-1/2 lg:w-2/3 text-PRIMARY">
           Dave Kwiatkowski
         </h1>
-        <div className="w-full text-sm font-light sm:text-lg sm:w-1/2 lg:w-2/3">
-          <ul className='list-["-_"] list-outside'>
+        <div className="w-full text-sm font-light sm:text-lg sm:w-1/2 lg:w-1/3">
+          <ul className='list-["-_"] list-outside text-TEXT_DE_EMP'>
             <li>currently just a runner and a coding person</li>
             <li>
               supported by
@@ -24,7 +24,7 @@ const HomePage: FC = () => (
               </Button>
             </li>
             <li>
-              here&apos;s my:
+              my
               {' '}
               <Button href={urlConstants.instagram}>instagram</Button>
               ,
@@ -33,8 +33,7 @@ const HomePage: FC = () => (
               ,
               {' '}
               <Button href={urlConstants.codepen}>codepen</Button>
-              ,
-              {' '}
+              {', and '}
               <Button href="mailto:hi@davekwiatkowski.com">email</Button>
             </li>
           </ul>

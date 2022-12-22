@@ -3,7 +3,7 @@
 }
 
 .unreset a {
-  @apply text-blue-500 underline;
+  @apply text-LINK underline hover:text-LINK_HOVER;
 }
 
 .unreset ul,
@@ -11,7 +11,7 @@ menu {
   @apply pl-5 my-4 list-disc;
 }
 
-.unreset li > p {
+.unreset li>p {
   @apply my-0;
 }
 

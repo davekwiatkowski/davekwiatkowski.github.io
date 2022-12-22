@@ -29,14 +29,14 @@ const PostPage: FC = () => {
           {postData ? (
             <>
               <div>
-                <h2 className="pb-4 text-4xl italic font-extralight sm:text-8xl">
+                <h2 className="pb-4 text-4xl italic font-extralight sm:text-8xl text-PRIMARY">
                   {postData.title}
                 </h2>
-                <div className="text-stone-400">
+                <div className="text-TEXT_DE_EMP">
                   {new Date(postData.publishedAt).toDateString()}
                   {' | By '}
                   <span
-                    className="text-teal-500 cursor-pointer hover:text-teal-600"
+                    className="text-LINK cursor-pointer hover:text-LINK_HOVER"
                     onClick={handleClose}
                   >
                     <span className="underline">
@@ -45,14 +45,14 @@ const PostPage: FC = () => {
                   </span>
                 </div>
               </div>
-              <hr className="mt-4 mb-4" />
+              <hr className="mt-4 mb-4 border-PRIMARY" />
               <figure>
                 <img
                   src={getUrlFor(postData.mainImage).url()}
                   alt={postData.mainImage.caption ?? undefined}
                 />
                 {postData.mainImage.caption && (
-                  <figcaption className="text-sm italic text-center text-stone-600">
+                  <figcaption className="text-sm italic text-center text-TEXT_DE_EMP">
                     {postData.mainImage.caption}
                   </figcaption>
                 )}
@@ -72,9 +72,9 @@ const PostPage: FC = () => {
                   }}
                 />
               </div>
-              <hr className="mb-4" />
+              <hr className="mb-4 border-PRIMARY" />
               <div
-                className="text-teal-500 cursor-pointer hover:text-teal-600"
+                className="text-LINK cursor-pointer hover:text-LINK_HOVER"
                 onClick={handleClose}
               >
                 <span>

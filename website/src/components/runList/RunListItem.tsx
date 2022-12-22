@@ -10,14 +10,17 @@ const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run 
 
   return (
     <div key={index} className="w-full pb-4 pr-4 sm:w-1/2 lg:w-1/3">
-      <table className="w-full text-sm text-left divide-y table-fixed divide-stone-300">
+      <table className="w-full text-sm text-left divide-y table-fixed divide-TEXT_DE_EMP">
         <thead>
           <tr>
-            <th className="w-12 font-light">{index}</th>
-            <th className={`italic text-black ${'font-light'}`}>{run.date}</th>
+            <th className="w-12 font-light text-TEXT_DE_EMP">
+              #
+              {index}
+            </th>
+            <th className={`italic text-TEXT ${'font-light'}`}>{run.date}</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-stone-300">
+        <tbody className="divide-y divide-TEXT_DE_EMP">
           <tr>
             <td className="mt-1 mb-1 font-light">Type</td>
             <td className="flex flex-wrap gap-1 pr-2 mt-1 mb-1">
@@ -74,11 +77,10 @@ const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run 
           <tr>
             <td className="font-light">Link</td>
             <td
-              className="flex cursor-pointer hover:bg-stone-100"
-              onClick={handleClick}
+              className="flex"
             >
-              <div>
-                <span className="underline">See result</span>
+              <div onClick={handleClick} className="text-LINK hover:text-LINK_HOVER cursor-pointer">
+                <span className="underline ">See result</span>
                 <span className="ml-1">→</span>
               </div>
             </td>

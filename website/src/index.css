@@ -6,7 +6,8 @@
 
 html,
 body {
-  @apply font-serif bg-BG;
+  @apply font-sans bg-BG text-TEXT;
+  font-size: 13px;
 }
 
 body::-webkit-scrollbar {
