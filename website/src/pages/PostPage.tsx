@@ -29,7 +29,7 @@ const PostPage: FC = () => {
           {postData ? (
             <>
               <div>
-                <h2 className="pb-4 text-4xl italic font-extralight sm:text-8xl text-PRIMARY">
+                <h2 className="pb-4 text-4xl italic font-thin sm:text-8xl text-PRIMARY">
                   {postData.title}
                 </h2>
                 <div className="text-TEXT_DE_EMP">

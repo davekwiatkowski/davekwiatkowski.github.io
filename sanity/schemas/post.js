@@ -23,6 +23,7 @@ const post = {
       type: 'image',
       options: {
         hotspot: true,
+        metadata: ['palette'],
       },
       fields: [
         {

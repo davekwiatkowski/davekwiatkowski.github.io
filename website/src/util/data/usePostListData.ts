@@ -7,7 +7,18 @@ export interface IPostListItemData {
   slug: {
     current: string
   };
-  mainImage: SanityImageSource
+  mainImage: SanityImageSource & {
+    asset: {
+      metadata: {
+        palette: {
+          dominant: {
+            background: string;
+            foreground: string;
+          }
+        }
+      }
+    }
+  }
 }
 
 const usePostListData = (): IPostListItemData[] | undefined => useSanityFetch(
@@ -18,7 +29,15 @@ const usePostListData = (): IPostListItemData[] | undefined => useSanityFetch(
     mainImage{
       asset->{
         _id,
-        url
+        url,
+        metadata {
+          palette {
+            dominant {
+              background,
+              foreground,
+            }
+          }
+        }
       },
       crop,
     }
