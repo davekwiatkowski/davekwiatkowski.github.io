@@ -26,7 +26,7 @@ const PostListItem: FC<{ post: IPostListItemData; index: number }> = ({ post, in
         }}
       >
         <div
-          className={`w-full h-[200px] sm:h-[300px] lg:h-[400px] transition-all duration-200 ${isHovering ? 'p-0' : 'p-10'}`}
+          className={`w-full h-[200px] sm:h-[300px] border border-BG lg:h-[400px] transition-all duration-200 ${isHovering ? '' : 'pb-4 pr-4 pt-8 pl-8 sm:pt-14 sm:pl-14 lg:pt-20 lg:pl-20'}`}
           style={{ backgroundColor }}
         >
           <img
