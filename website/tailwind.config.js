@@ -6,11 +6,11 @@ module.exports = {
     extend: {
       colors: {
         BG: '#fff',
+        TEXT_DE_EMP: '#777471',
         TEXT: '#000',
-        TEXT_DE_EMP: '#A8A49E',
+        PRIMARY: '#9B6400',
         LINK: '#3984FF',
         LINK_HOVER: '#0061FE',
-        PRIMARY: '#9B6400',
       },
     },
     fontSize: {

@@ -14,7 +14,6 @@ const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run 
         <thead>
           <tr>
             <th className="w-12 font-light text-TEXT_DE_EMP">
-              #
               {index}
             </th>
             <th className={`italic text-TEXT ${'font-light'}`}>{run.date}</th>

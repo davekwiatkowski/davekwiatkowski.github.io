@@ -26,7 +26,7 @@ const PostListItem: FC<{ post: IPostListItemData; index: number }> = ({ post, in
         }}
       >
         <div
-          className={`w-full h-[200px] sm:h-[300px] border border-BG lg:h-[400px] transition-all duration-200 ${isHovering ? '' : 'pb-4 pr-4 pt-8 pl-8 sm:pt-14 sm:pl-14 lg:pt-20 lg:pl-20'}`}
+          className={`w-full h-[200px] border-BG border sm:h-[300px] lg:h-[400px] transition-all duration-200 ${isHovering ? '' : 'pr-4 pb-10 sm:pb-12 pt-8 pl-8 sm:pt-14 sm:pl-14 lg:pt-20 lg:pl-20'}`}
           style={{ backgroundColor }}
         >
           <img
@@ -35,23 +35,25 @@ const PostListItem: FC<{ post: IPostListItemData; index: number }> = ({ post, in
             className={`w-full h-full object-cover transition-all duration-200 ${isHovering ? '' : 'rounded-3xl'}`}
           />
         </div>
-        <div className="w-full absolute left-0 top-0 h-full p-4" style={{ color: foregroundColor }}>
+        <div
+          className="w-full absolute left-0 top-0 h-full p-4"
+          style={{ color: foregroundColor }}
+        >
           <div className="flex justify-between">
             <div
-              className="font-black text-3xl sm:text-5xl"
+              className="font-bold sm:font-thin text-3xl sm:text-5xl lg:text-6xl"
             >
               {title}
 
             </div>
             <div
-              className="font-thin sm:text-lg"
+              className="text-xs font-bold"
             >
-              #
               {index + 1}
             </div>
           </div>
           <div
-            className="italic absolute bottom-4 sm:text-3xl font-thin"
+            className="italic text-xs absolute bottom-3 sm:text-lg font-thin"
           >
             {date}
 
