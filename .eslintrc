@@ -1,6 +1,7 @@
 {
     "extends": [
-        "airbnb"
+        "airbnb",
+        "plugin:react-hooks/recommended"
     ],
     "rules": {
         "react/function-component-definition": "off",

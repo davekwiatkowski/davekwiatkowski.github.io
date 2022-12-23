@@ -16,7 +16,7 @@ const PostListItem: FC<{ post: IPostListItemData; index: number }> = ({ post, in
     <div className="flex flex-col w-full sm:w-1/2 lg:w-1/3">
       <Link
         className="w-full relative"
-        to={`/${slug}`}
+        to={`/blog/${slug}`}
         key={slug}
         onMouseEnter={() => {
           setIsHovering(true);

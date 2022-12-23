@@ -17,7 +17,7 @@ const PostPage: FC = () => {
   const handleClose = useCallback(
     (event: any) => {
       event.preventDefault();
-      navigate('/');
+      navigate('/blog');
     },
     [navigate],
   );

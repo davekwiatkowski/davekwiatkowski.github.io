@@ -6,7 +6,7 @@ import RunList from '../components/runList/RunList';
 import Tabs from '../components/common/tabs/Tabs';
 import Tab from '../components/common/tabs/Tab';
 
-const HomePage: FC = () => (
+const HomePage: FC<{ tab: 'blog' | 'runs' }> = ({ tab }) => (
   <div className="flex justify-center w-full pt-4 pb-4 md:pt-12 md:pb-12">
     <div className="w-full max-w-7xl">
       <div className="flex flex-row flex-wrap h-auto gap-4 pt-4 pb-4 pl-4 pr-4 md:pt-0 md:pb-0 sm:flex-nowrap">
@@ -39,7 +39,7 @@ const HomePage: FC = () => (
           </ul>
         </div>
       </div>
-      <Tabs>
+      <Tabs activeTab={tab}>
         <Tab label="blog">
           <PostList />
         </Tab>

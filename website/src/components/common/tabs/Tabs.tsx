@@ -1,14 +1,15 @@
 import {
-  FC, ReactElement, useCallback, useState,
+  FC, ReactElement, useCallback,
 } from 'react';
+import { useNavigate } from 'react-router-dom';
 import TabLabel from './TabLabel';
 
-const Tabs: FC<{ children: ReactElement[] }> = ({ children }) => {
-  const [activeTab, setActiveTab] = useState(children[0].props.label);
+const Tabs: FC<{ children: ReactElement[], activeTab: 'runs' | 'blog' }> = ({ children, activeTab }) => {
+  const navigate = useNavigate();
 
   const handleTabClick = useCallback((tab: string) => {
-    setActiveTab(tab);
-  }, []);
+    navigate(`/${tab}`);
+  }, [navigate]);
 
   return (
     <div className="p-4">
