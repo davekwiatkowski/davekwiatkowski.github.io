@@ -12,3 +12,7 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+
+blockquote {
+  @apply pl-4 italic border-l-4 border-PRIMARY text-TEXT;
+}
