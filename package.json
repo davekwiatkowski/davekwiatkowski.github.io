@@ -11,7 +11,8 @@
     "start": "yarn workspaces foreach --parallel --verbose run start",
     "deploy": "yarn workspaces foreach --parallel --verbose run deploy",
     "lint": "yarn workspaces foreach --parallel --verbose run lint",
-    "lint:fix": "yarn workspaces foreach --parallel --verbose run lint:fix"
+    "lint:fix": "yarn workspaces foreach --parallel --verbose run lint:fix",
+    "login": "sanity login"
   },
   "packageManager": "yarn@3.2.1",
   "dependencies": {
