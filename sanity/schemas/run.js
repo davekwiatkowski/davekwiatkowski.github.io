@@ -44,7 +44,7 @@ const run = {
       title: 'Type',
       type: 'string',
       options: {
-        list: ['Backyard', 'Race', 'FKT'],
+        list: ['Backyard', 'Race', 'FKT', 'Adventure'],
         layout: 'dropdown',
       },
       validation: (Rule) => Rule.required(),

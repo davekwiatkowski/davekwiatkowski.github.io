@@ -7,20 +7,20 @@ export interface IRunListItemData {
   location: string;
   distance: {
     amount: number;
-    unit: string
+    unit: string;
   };
   duration: {
     days: number;
     hours: number;
     minutes: number;
-    seconds: number
+    seconds: number;
   };
-  type: 'Backyard' | 'Race' | 'FKT';
+  type: 'Backyard' | 'Race' | 'FKT' | 'Adventure';
   race?: {
     place: number;
   };
   fkt?: {
-    type: 'Unsupported' | 'Self-supported' | 'Supported'
+    type: 'Unsupported' | 'Self-supported' | 'Supported';
   };
   backyard?: {
     yards: number;
@@ -28,8 +28,9 @@ export interface IRunListItemData {
   };
 }
 
-const useRunListData = (): IRunListItemData[] | undefined => useSanityFetch(
-  `*[_type == "run"]{
+const useRunListData = (): IRunListItemData[] | undefined =>
+  useSanityFetch(
+    `*[_type == "run"]{
     date,
     course,
     link,
@@ -55,7 +56,7 @@ const useRunListData = (): IRunListItemData[] | undefined => useSanityFetch(
       yards,
       place,
     },
-  }`,
-);
+  }`
+  );
 
 export default useRunListData;

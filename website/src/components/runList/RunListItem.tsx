@@ -46,6 +46,9 @@ const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run 
                   <Tag className="bg-red-100">{toOrdinal(run.race?.place)}</Tag>
                 </>
               )}
+              {run.type === 'Adventure' && (
+              <Tag className="bg-orange-200">{run.type}</Tag>
+              )}
             </td>
           </tr>
           <tr>
@@ -78,7 +81,7 @@ const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run 
             <td
               className="flex"
             >
-              <div onClick={handleClick} className="text-LINK hover:text-LINK_HOVER cursor-pointer">
+              <div onClick={handleClick} className="cursor-pointer text-LINK hover:text-LINK_HOVER">
                 <span className="underline ">See result</span>
                 <span className="ml-1">→</span>
               </div>
