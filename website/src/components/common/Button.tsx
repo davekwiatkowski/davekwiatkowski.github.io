@@ -6,7 +6,7 @@ const Button: FC<{
 }> = ({ highlight, href, children }) => (
   <a
     className={`${
-      highlight ? "before:content-['⭑_'] font-bold" : ''
+      highlight ? 'font-bold' : ''
     } whitespace-nowrap underline hover:text-LINK_HOVER text-LINK transition-opacity`}
     href={href}
     target="_blank"

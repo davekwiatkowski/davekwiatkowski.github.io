@@ -13,9 +13,7 @@ const HomePage: FC<{ tab: 'blog' | 'runs' }> = ({ tab }) => (
         <div className="w-full text-sm font-light sm:w-1/2 lg:w-1/3">
           <ul className='list-["-_"] list-inside text-TEXT_DE_EMP'>
             <li>
-              <Button href={urlConstants.mapShare} highlight>Track Dave</Button>
-              {' '}
-              running across the U.S. on May 1st
+              Ran 3,402 miles across the country in 76 days
             </li>
             <li>
               {' '}
@@ -26,8 +24,15 @@ const HomePage: FC<{ tab: 'blog' | 'runs' }> = ({ tab }) => (
               ,
               {' '}
               <Button href={urlConstants.codepen}>codepen</Button>
+              ,
               {' '}
-              <Button href="mailto:hi@davekwiatkowski.com">email</Button>
+              <Button href={urlConstants.linkedin}>linkedin</Button>
+              ,
+              {' '}
+              <Button href={urlConstants.github}>github</Button>
+              ,
+              {' '}
+              <Button highlight href="mailto:hi@davekwiatkowski.com">email</Button>
             </li>
           </ul>
         </div>
