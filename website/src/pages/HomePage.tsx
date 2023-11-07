@@ -13,7 +13,8 @@ const HomePage: FC<{ tab: 'blog' | 'runs' }> = ({ tab }) => (
         <div className="w-full text-sm font-light sm:w-1/2 lg:w-1/3">
           <ul className='list-["-_"] list-inside text-TEXT_DE_EMP'>
             <li>
-              Ran 3,402 miles across the country in 76 days
+              ran 3,402 miles across the u.s.a. in 76 days with a backpack and a stroller named
+              Sunshine
             </li>
             <li>
               {' '}
@@ -32,7 +33,7 @@ const HomePage: FC<{ tab: 'blog' | 'runs' }> = ({ tab }) => (
               <Button href={urlConstants.github}>github</Button>
               ,
               {' '}
-              <Button highlight href="mailto:hi@davekwiatkowski.com">email</Button>
+              <Button href="mailto:hi@davekwiatkowski.com">email</Button>
             </li>
           </ul>
         </div>

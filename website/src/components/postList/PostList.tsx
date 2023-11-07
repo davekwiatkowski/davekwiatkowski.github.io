@@ -7,7 +7,7 @@ const PostList: FC = () => {
   const postListData = usePostListData();
 
   return (
-    <div className="flex flex-row flex-wrap max-w-screen-xl w-full">
+    <div className="flex flex-row flex-wrap w-full max-w-screen-xl">
       {postListData ? (
         postListData
           .sort(
