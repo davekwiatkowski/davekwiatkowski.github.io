@@ -7,6 +7,7 @@ import PostPageImage from '../components/postPage/PostPageImage';
 import PostPageLink from '../components/postPage/PostPageLink';
 import getUrlFor from '../util/getUrlFor';
 import usePostData from '../util/data/usePostData';
+import Image from '../components/common/Image';
 
 const PostPage: FC = () => {
   const { slug } = useParams();
@@ -36,7 +37,7 @@ const PostPage: FC = () => {
                   {new Date(postData.publishedAt).toDateString()}
                   {' | By '}
                   <span
-                    className="text-LINK cursor-pointer hover:text-LINK_HOVER"
+                    className="cursor-pointer text-LINK hover:text-LINK_HOVER"
                     onClick={handleClose}
                   >
                     <span className="underline">
@@ -47,9 +48,9 @@ const PostPage: FC = () => {
               </div>
               <hr className="mt-4 mb-4 border-PRIMARY" />
               <figure>
-                <img
+                <Image
                   src={getUrlFor(postData.mainImage).url()}
-                  alt={postData.mainImage.caption ?? undefined}
+                  alt={postData.mainImage.caption ?? ''}
                 />
                 {postData.mainImage.caption && (
                   <figcaption className="text-sm italic text-center text-TEXT_DE_EMP">
@@ -74,7 +75,7 @@ const PostPage: FC = () => {
               </div>
               <hr className="mb-4 border-PRIMARY" />
               <div
-                className="text-LINK cursor-pointer hover:text-LINK_HOVER"
+                className="cursor-pointer text-LINK hover:text-LINK_HOVER"
                 onClick={handleClose}
               >
                 <span>

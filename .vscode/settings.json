@@ -5,11 +5,10 @@
     "**/dist": true,
     ".yarn": true
   },
-  "cSpell.ignoreWords": [
-    "Kwiatkowski"
-  ],
+  "cSpell.ignoreWords": ["Kwiatkowski"],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll": true
   },
   "eslint.enable": true,
   "eslint.validate": [

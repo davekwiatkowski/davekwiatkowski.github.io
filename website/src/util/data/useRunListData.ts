@@ -28,9 +28,8 @@ export interface IRunListItemData {
   };
 }
 
-const useRunListData = (): IRunListItemData[] | undefined =>
-  useSanityFetch(
-    `*[_type == "run"]{
+const useRunListData = (): IRunListItemData[] | undefined => useSanityFetch(
+  `*[_type == "run"]{
     date,
     course,
     link,
@@ -56,7 +55,7 @@ const useRunListData = (): IRunListItemData[] | undefined =>
       yards,
       place,
     },
-  }`
-  );
+  }`,
+);
 
 export default useRunListData;

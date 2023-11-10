@@ -1,21 +1,23 @@
 import {
-  FC, useState,
+  FC, useMemo, useState,
 } from 'react';
 import { Link } from 'react-router-dom';
 import getUrlFor from '../../util/getUrlFor';
 import { IPostListItemData } from '../../util/data/usePostListData';
 import Image from '../common/Image';
+import postListItemWidths from '../../constants/postListItemWidths';
 
-const PostListItem: FC<{ post: IPostListItemData; index: number }> = ({ post, index }) => {
+const PostListItem: FC<{ post: IPostListItemData; postNumber: number, index:number, }> = ({ post, postNumber, index }) => {
   const date = new Date(post.publishedAt).toLocaleDateString();
   const { title } = post;
   const slug = post.slug.current;
   const imageSrc = getUrlFor(post.mainImage).url();
   const [isHovering, setIsHovering] = useState(false);
   const backgroundColor = post.mainImage.asset.metadata.palette.dominant.background;
+  const widthClassName = useMemo(() => postListItemWidths[index % postListItemWidths.length], [index]);
 
   return (
-    <div className={`flex flex-col w-full ${((index % 4) / 1.5) % 2 === 0 ? 'md:w-[33%]' : 'md:w-[66%]'}`}>
+    <div className={`w-full ${widthClassName}`}>
       <Link
         className="relative w-full"
         to={`/blog/${slug}`}
@@ -28,14 +30,14 @@ const PostListItem: FC<{ post: IPostListItemData; index: number }> = ({ post, in
         }}
       >
         <div
-          className="w-full h-[200px] border-BG border-[10px] sm:h-[300px] lg:h-[400px] transition-all duration-200 rounded-3xl md:rounded-[50px]"
+          className="w-full h-[240px] sm:h-[280px] md:-[300px] lg:h-[400px] transition-all duration-200 rounded-3xl md:rounded-[50px]"
           style={{ backgroundColor }}
         >
           <Image
             src={imageSrc}
             alt={title}
-            endingOpacity={isHovering ? 1 : 0.2}
-            className="w-full h-full object-cover object-top transition-all duration-200 rounded-2xl md:rounded-[38px]"
+            endingOpacity={isHovering ? 1 : 0.15}
+            className="w-full h-full object-cover object-top transition-all duration-200 rounded-3xl md:rounded-[50px]"
           />
         </div>
         <div
@@ -57,7 +59,7 @@ const PostListItem: FC<{ post: IPostListItemData; index: number }> = ({ post, in
               <div
                 className="text-xs sm:text-lg"
               >
-                {index + 1}
+                {postNumber}
               </div>
             </div>
           </div>

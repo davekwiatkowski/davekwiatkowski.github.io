@@ -11,7 +11,15 @@ const Image: FC<{ src: string, alt: string, className?: string, endingOpacity?: 
     setIsLoaded(true);
   }, []);
 
-  return <img src={src} onLoad={onLoad} alt={alt} className={className} style={{ opacity: isLoaded ? endingOpacity : '0' }} />;
+  return (
+    <img
+      src={src}
+      onLoad={onLoad}
+      alt={alt}
+      className={`${className} transition-opacity duration-200`}
+      style={{ opacity: isLoaded ? endingOpacity : 0 }}
+    />
+  );
 };
 
 export default Image;

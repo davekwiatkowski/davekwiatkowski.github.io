@@ -7,7 +7,7 @@ const PostList: FC = () => {
   const postListData = usePostListData();
 
   return (
-    <div className="flex flex-row flex-wrap justify-between w-full max-w-screen-xl">
+    <div className="flex flex-row flex-wrap justify-between w-full max-w-screen-xl gap-4">
       {postListData ? (
         postListData
           .sort(
@@ -16,9 +16,10 @@ const PostList: FC = () => {
           )
           .map((post, index: number) => (
             <PostListItem
+              index={index}
               key={post.publishedAt}
               post={post}
-              index={postListData.length - 1 - index}
+              postNumber={postListData.length - 1 - index + 1}
             />
           ))
       ) : (

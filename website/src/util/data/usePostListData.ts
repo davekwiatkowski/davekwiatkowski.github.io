@@ -5,7 +5,7 @@ export interface IPostListItemData {
   title: string;
   publishedAt: string;
   slug: {
-    current: string
+    current: string;
   };
   mainImage: SanityImageSource & {
     asset: {
@@ -14,11 +14,11 @@ export interface IPostListItemData {
           dominant: {
             background: string;
             foreground: string;
-          }
-        }
-      }
-    }
-  }
+          };
+        };
+      };
+    };
+  };
 }
 
 const usePostListData = (): IPostListItemData[] | undefined => useSanityFetch(

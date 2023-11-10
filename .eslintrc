@@ -1,29 +1,23 @@
 {
-    "extends": [
-        "airbnb",
-        "plugin:react-hooks/recommended"
-    ],
-    "rules": {
-        "react/function-component-definition": "off",
-        "react/react-in-jsx-scope": "off",
-        "jsx-a11y/click-events-have-key-events": "off",
-        "jsx-a11y/no-static-element-interactions": "off",
-        "react/require-default-props": "off",
-        "jsx-a11y/no-noninteractive-element-interactions": "off",
-        "no-underscore-dangle": "off"
-    },
-    "overrides": [
-        {
-            "extends": [
-                "airbnb-typescript"
-            ],
-            "files": [
-                "*.ts",
-                "*.tsx"
-            ],
-            "parserOptions": {
-                "project": "**/tsconfig.json"
-            },
-        }
-    ]
+  "extends": ["airbnb", "plugin:react-hooks/recommended"],
+  "rules": {
+    "react/function-component-definition": "off",
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/require-default-props": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "no-underscore-dangle": "off",
+    "no-bitwise": "off",
+    "max-len": "off"
+  },
+  "overrides": [
+    {
+      "extends": ["airbnb-typescript"],
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": "**/tsconfig.json"
+      }
+    }
+  ]
 }
