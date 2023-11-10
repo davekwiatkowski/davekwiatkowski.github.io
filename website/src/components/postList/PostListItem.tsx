@@ -30,23 +30,23 @@ const PostListItem: FC<{ post: IPostListItemData; postNumber: number, index:numb
         }}
       >
         <div
-          className="w-full h-[240px] sm:h-[280px] md:-[300px] lg:h-[400px] transition-all duration-200 rounded-3xl md:rounded-[50px]"
+          className="w-full h-[240px] sm:h-[280px] md:-[300px] lg:h-[400px] transition-all duration-200 rounded-3xl md:rounded-[50px] overflow-hidden"
           style={{ backgroundColor }}
         >
           <Image
             src={imageSrc}
             alt={title}
-            endingOpacity={isHovering ? 1 : 0.15}
-            className="w-full h-full object-cover object-top transition-all duration-200 rounded-3xl md:rounded-[50px]"
+            endingOpacity={isHovering ? 1 : 0.1}
+            className={`${isHovering && 'scale-110'} w-full h-full object-cover object-top transition-all duration-200 rounded-3xl md:rounded-[50px]`}
           />
         </div>
         <div
-          className="absolute top-0 left-0 w-full h-full p-8 sm:p-12 mix-blend-plus-lighter"
-          style={{ color: backgroundColor }}
+          className={`absolute top-0 left-0 w-full h-full p-8 sm:p-12 ${!isHovering && 'mix-blend-plus-lighter'}`}
+          style={{ color: isHovering ? '#fff' : backgroundColor }}
         >
           <div className="flex flex-col justify-between w-full h-full">
             <div
-              className="text-4xl lg:text-6xl"
+              className="text-4xl xl:font-bold lg:text-6xl"
             >
               {title}
             </div>
