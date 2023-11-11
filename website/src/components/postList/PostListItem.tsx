@@ -17,7 +17,7 @@ const PostListItem: FC<{ post: IPostListItemData; postNumber: number, index:numb
   const widthClassName = useMemo(() => postListItemWidths[index % postListItemWidths.length], [index]);
 
   return (
-    <div className={`w-full ${widthClassName}`}>
+    <div className={`w-full sm:w-[calc(50%-8px)] ${widthClassName} hover:translate-y-[-4px] hover:drop-shadow-lg transition-all duration-200`}>
       <Link
         className="relative w-full"
         to={`/blog/${slug}`}
@@ -30,7 +30,7 @@ const PostListItem: FC<{ post: IPostListItemData; postNumber: number, index:numb
         }}
       >
         <div
-          className="w-full h-[240px] sm:h-[280px] md:-[300px] lg:h-[400px] transition-all duration-200 rounded-3xl md:rounded-[50px] overflow-hidden"
+          className="w-full h-[240px] sm:h-[280px] md:-[300px] lg:h-[400px] transition-all duration-200 rounded-[40px] overflow-hidden"
           style={{ backgroundColor }}
         >
           <Image
