@@ -8,18 +8,20 @@ import Image from '../common/Image';
 import postListItemWidths from '../../constants/postListItemWidths';
 
 const PostListItem: FC<{ post: IPostListItemData; postNumber: number, index:number, }> = ({ post, postNumber, index }) => {
-  const date = new Date(post.publishedAt).toLocaleDateString();
   const { title } = post;
   const slug = post.slug.current;
-  const imageSrc = getUrlFor(post.mainImage).url();
-  const [isHovering, setIsHovering] = useState(false);
   const backgroundColor = post.mainImage.asset.metadata.palette.dominant.background;
+
+  const [isHovering, setIsHovering] = useState(false);
+
+  const date = useMemo(() => new Date(post.publishedAt).toLocaleDateString(), [post.publishedAt]);
+  const imageSrc = useMemo(() => getUrlFor(post.mainImage).url(), [post.mainImage]);
   const widthClassName = useMemo(() => postListItemWidths[index % postListItemWidths.length], [index]);
 
   return (
     <div className={`w-full sm:w-[calc(50%-8px)] ${widthClassName} hover:translate-y-[-4px] hover:drop-shadow-lg transition-all duration-200`}>
       <Link
-        className="relative w-full"
+        className="relative block w-full"
         to={`/blog/${slug}`}
         key={slug}
         onMouseEnter={() => {
