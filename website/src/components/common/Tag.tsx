@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 const Tag: FC<{ className: string }> = ({ children, className }) => (
-  <div className={`${className} pl-1 pr-1 whitespace-nowrap rounded-xl`}>
+  <div className={`${className} whitespace-nowrap pl-2 pr-2 text-BG font-extralight`}>
     {children}
   </div>
 );

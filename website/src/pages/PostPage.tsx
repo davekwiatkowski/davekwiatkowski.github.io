@@ -26,7 +26,7 @@ const PostPage: FC = () => {
   return (
     <div className="flex flex-col p-4 md:pt-12 md:pb-12">
       <div className="flex justify-center w-full">
-        <div className="w-full max-w-2xl">
+        <div className="w-full max-w-3xl">
           {postData ? (
             <>
               <div>

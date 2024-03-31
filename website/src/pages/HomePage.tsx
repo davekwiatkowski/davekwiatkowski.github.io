@@ -7,40 +7,31 @@ import Tabs from '../components/common/tabs/Tabs';
 import Tab from '../components/common/tabs/Tab';
 
 const HomePage: FC<{ tab: 'blog' | 'runs' }> = ({ tab }) => (
-  <div className="flex justify-center w-full pt-4 pb-4 md:pt-12 md:pb-12">
-    <div className="w-full max-w-7xl">
-      <div className="flex flex-row flex-wrap items-end h-auto gap-4 pt-4 pb-4 pl-4 pr-4 md:pt-0 md:pb-0 sm:flex-nowrap">
-        <div className="w-full text-sm font-light sm:w-1/2 lg:w-1/3">
-          <ul className='list-["-_"] list-inside text-TEXT_DE_EMP'>
-            <li>
-              ran 3,402 miles across the u.s.a. in 76 days with a backpack and a stroller named
-              Sunshine
-            </li>
-            <li>
-              {' '}
-              <Button href={urlConstants.instagram}>instagram</Button>
-              ,
-              {' '}
-              <Button href={urlConstants.strava}>strava</Button>
-              ,
-              {' '}
-              <Button href={urlConstants.codepen}>codepen</Button>
-              ,
-              {' '}
-              <Button href={urlConstants.linkedin}>linkedin</Button>
-              ,
-              {' '}
-              <Button href={urlConstants.github}>github</Button>
-              ,
-              {' '}
-              <Button href="mailto:hi@davekwiatkowski.com">email</Button>
-            </li>
-          </ul>
-        </div>
-        {' '}
-        <h1 className="w-full text-3xl font-thin text-left sm:text-right sm:text-4xl md:text-5xl lg:text-7xl sm:w-1/2 lg:w-2/3 text-PRIMARY">
+  <div className="flex justify-center w-full">
+    <div className="w-full">
+      <div className="flex flex-row flex-wrap items-start h-auto gap-4 justify-between p-4">
+        <h1 className="text-PRIMARY font-bold text-lg sm:text-2xl">
           Dave Kwiatkowski
         </h1>
+        <div className="text-base sm:text-lg">
+          {' '}
+          <Button href={urlConstants.instagram}>instagram</Button>
+          ,
+          {' '}
+          <Button href={urlConstants.strava}>strava</Button>
+          ,
+          {' '}
+          <Button href={urlConstants.codepen}>codepen</Button>
+          ,
+          {' '}
+          <Button href={urlConstants.linkedin}>linkedin</Button>
+          ,
+          {' '}
+          <Button href={urlConstants.github}>github</Button>
+          ,
+          {' '}
+          <Button href="mailto:hi@davekwiatkowski.com">email</Button>
+        </div>
       </div>
       <Tabs activeTab={tab}>
         <Tab label="blog">
