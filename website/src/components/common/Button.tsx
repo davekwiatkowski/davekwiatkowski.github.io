@@ -3,6 +3,7 @@ import { FC } from 'react';
 const Button: FC<{
   href?: string;
   highlight?: boolean;
+  children?: React.ReactNode
 }> = ({ highlight, href, children }) => (
   <a
     className={`${

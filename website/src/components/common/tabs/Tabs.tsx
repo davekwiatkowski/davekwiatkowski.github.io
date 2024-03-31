@@ -3,8 +3,9 @@ import {
 } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TabLabel from './TabLabel';
+import RouteName from '../../../constants/Route';
 
-const Tabs: FC<{ children: ReactElement[], activeTab: 'runs' | 'blog' }> = ({ children, activeTab }) => {
+const Tabs: FC<{ children: ReactElement[], activeTab: RouteName }> = ({ children, activeTab }) => {
   const navigate = useNavigate();
 
   const handleTabClick = useCallback((tab: string) => {

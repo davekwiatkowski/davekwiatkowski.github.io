@@ -4,8 +4,9 @@ import {
 import { Link } from 'react-router-dom';
 import ArrowUpRightIcon from '@heroicons/react/24/outline/ArrowUpRightIcon';
 import { IPostListItemData } from '../../util/data/usePostListData';
+import RouteName from '../../constants/Route';
 
-const PostListItem: FC<{ post: IPostListItemData; postNumber: number, index:number, }> = ({ post, postNumber, index }) => {
+const PostListItem: FC<{ post: IPostListItemData; postNumber: number }> = ({ post, postNumber }) => {
   const { title } = post;
   const slug = post.slug.current;
 
@@ -17,7 +18,7 @@ const PostListItem: FC<{ post: IPostListItemData; postNumber: number, index:numb
     <div className="w-full border-t-1 border-b border-spacing-0 border-separate border-PRIMARY">
       <Link
         className="w-full cursor-pointer"
-        to={`/blog/${slug}`}
+        to={`/${RouteName.Blog}/${slug}`}
         key={slug}
         onMouseEnter={() => {
           setIsHovering(true);

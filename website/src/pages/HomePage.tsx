@@ -5,8 +5,10 @@ import PostList from '../components/postList/PostList';
 import RunList from '../components/runList/RunList';
 import Tabs from '../components/common/tabs/Tabs';
 import Tab from '../components/common/tabs/Tab';
+import RouteName from '../constants/Route';
+import About from '../components/About';
 
-const HomePage: FC<{ tab: 'blog' | 'runs' }> = ({ tab }) => (
+const HomePage: FC<{ tab: RouteName }> = ({ tab }) => (
   <div className="flex justify-center w-full">
     <div className="w-full">
       <div className="flex flex-row flex-wrap items-start h-auto gap-4 justify-between p-4">
@@ -34,10 +36,13 @@ const HomePage: FC<{ tab: 'blog' | 'runs' }> = ({ tab }) => (
         </div>
       </div>
       <Tabs activeTab={tab}>
-        <Tab label="blog">
+        <Tab label={RouteName.About}>
+          <About />
+        </Tab>
+        <Tab label={RouteName.Blog}>
           <PostList />
         </Tab>
-        <Tab label="runs">
+        <Tab label={RouteName.Runs}>
           <RunList />
         </Tab>
       </Tabs>

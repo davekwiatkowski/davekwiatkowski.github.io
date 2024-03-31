@@ -8,6 +8,7 @@ import PostPageLink from '../components/postPage/PostPageLink';
 import getUrlFor from '../util/getUrlFor';
 import usePostData from '../util/data/usePostData';
 import Image from '../components/common/Image';
+import RouteName from '../constants/Route';
 
 const PostPage: FC = () => {
   const { slug } = useParams();
@@ -18,7 +19,7 @@ const PostPage: FC = () => {
   const handleClose = useCallback(
     (event: any) => {
       event.preventDefault();
-      navigate('/blog');
+      navigate(`/${RouteName.Blog}`);
     },
     [navigate],
   );

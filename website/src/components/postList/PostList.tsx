@@ -16,7 +16,6 @@ const PostList: FC = () => {
           )
           .map((post, index: number) => (
             <PostListItem
-              index={index}
               key={post.publishedAt}
               post={post}
               postNumber={postListData.length - 1 - index + 1}
