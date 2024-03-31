@@ -10,8 +10,8 @@ const about = {
     },
     {
       name: 'text',
-      title: 'Text',
-      type: 'text',
+      title: 'Body',
+      type: 'blockContent',
     },
     {
       name: 'mainImage',
