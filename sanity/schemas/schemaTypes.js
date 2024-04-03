@@ -8,6 +8,7 @@ import backyard from './backyard';
 import fkt from './fkt';
 import race from './race';
 import about from './about';
+import mainLink from './mainLink';
 
 // Then we give our schema to the builder and provide the result to Sanity
 const schemaTypes = [
@@ -24,6 +25,7 @@ const schemaTypes = [
   fkt,
   race,
   about,
+  mainLink,
 ];
 
 export default schemaTypes;

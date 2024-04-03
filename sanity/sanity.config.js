@@ -35,8 +35,9 @@ export default defineConfig({
             ),
 
           // Regular document types
-          S.documentTypeListItem('post').title('Blog Posts'),
+          S.documentTypeListItem('post').title('Blog posts'),
           S.documentTypeListItem('run').title('Runs'),
+          S.documentTypeListItem('mainLink').title('Main links'),
         ]),
     }),
   //  visionTool(),

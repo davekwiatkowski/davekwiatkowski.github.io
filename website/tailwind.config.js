@@ -12,9 +12,9 @@ module.exports = {
         LINK: '#0061FE', // Dropbox Core Blue
         LINK_HOVER: '#3984FF', // Dropbox Core Blue Night
         ACCENT: {
-          1: '#007891', // Dropbox Accent Ocean
-          2: '#BE4B0A', // Dropbox Accent Rust
-          3: '#9B0032', // Dropbox Accent Crimson
+          1: '#283750', // Dropbox Accent Navy
+          2: '#78286E', // Dropbox Accent Plum
+          3: '#007891', // Dropbox Accent Ocean
           4: '#0F503C', // Dropbox Accent Canopy
         },
         HIGHLIGHT: '#FAD24B', // Dropbox Accent Banana
