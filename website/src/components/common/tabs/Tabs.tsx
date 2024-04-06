@@ -14,7 +14,7 @@ const Tabs: FC<{ children: ReactElement[], activeTab: RouteName }> = ({ children
 
   return (
     <div>
-      <div className="flex gap-4 p-4 border-b border-PRIMARY">
+      <div className="flex gap-4 p-4">
         {children?.map((child) => {
           const { label } = child.props;
           return (

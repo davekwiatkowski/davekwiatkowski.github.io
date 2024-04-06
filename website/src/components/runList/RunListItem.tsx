@@ -9,16 +9,27 @@ const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run 
     <table className="w-full text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-left divide-y table-fixed divide-PRIMARY">
       <thead>
         <tr>
-          <th className="w-16 text-PRIMARY border-r border-PRIMARY text-right pr-2">
-            {' '}
+          <th className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal">
+            {index.toString().padStart(3, '0')}
           </th>
-          <th className="pl-2 text-PRIMARY font-extralight">{run.date}</th>
         </tr>
       </thead>
       <tbody className="divide-y divide-PRIMARY">
         <tr>
-          <td className="mt-1 mb-1 border-r border-PRIMARY text-right pr-2">Type</td>
-          <td className="pl-2 flex flex-wrap gap-[1px]">
+          <td>
+            {run.date}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {run.location}
+          </td>
+        </tr>
+        <tr>
+          <td>{`${run.course}`}</td>
+        </tr>
+        <tr>
+          <td className="flex flex-wrap gap-1 pb-2 pt-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
             {run.type === 'Backyard' && (
             <>
               <Tag>{run.type}</Tag>
@@ -42,27 +53,17 @@ const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run 
             </>
             )}
             {run.type === 'Adventure' && (
-            <Tag>{run.type}</Tag>
+              <Tag>{run.type}</Tag>
             )}
           </td>
         </tr>
         <tr>
-          <td className="border-r border-PRIMARY text-right pr-2">Name</td>
-          <td className="pl-2 font-bold">{run.course}</td>
-        </tr>
-        <tr>
-          <td className="border-r border-PRIMARY text-right pr-2">Place</td>
-          <td className="pl-2">{run.location}</td>
-        </tr>
-        <tr>
-          <td className="border-r border-PRIMARY text-right pr-2">Dist.</td>
-          <td className="pl-2">
+          <td>
             {`${run.distance.amount} ${run.distance.unit}`}
           </td>
         </tr>
         <tr>
-          <td className="border-r border-PRIMARY text-right pr-2">Time</td>
-          <td className="pl-2">
+          <td>
             {`
               ${run.duration.days ? `${run.duration.days}d` : ''}
               ${run.duration.hours ? `${run.duration.hours}h` : ''}
@@ -72,9 +73,8 @@ const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run 
           </td>
         </tr>
         <tr>
-          <td className="border-r border-PRIMARY text-right pr-2">Link</td>
-          <td className="pl-2">
-            <Button href={run.link} hasLinkIcon isFullWidth>See result</Button>
+          <td>
+            <Button href={run.link} hasLinkIcon>See result</Button>
           </td>
         </tr>
       </tbody>
