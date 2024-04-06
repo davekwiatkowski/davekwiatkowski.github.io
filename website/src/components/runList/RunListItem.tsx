@@ -5,8 +5,8 @@ import Tag from '../common/Tag';
 import Button from '../common/Button';
 
 const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run }) => (
-  <div key={index} className="w-full p-4 pb-0 border-PRIMARY sm:w-1/2 lg:w-1/3 text-PRIMARY">
-    <table className="w-full text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-left divide-y table-fixed divide-PRIMARY">
+  <div key={index} className="w-full p-4 pb-0 border-PRIMARY sm:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5 text-PRIMARY">
+    <table className="w-full text-sm sm:text-base md:text-lg lg:text-xl text-left divide-y table-fixed divide-PRIMARY">
       <thead>
         <tr>
           <th className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal">
@@ -29,7 +29,7 @@ const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run 
           <td>{`${run.course}`}</td>
         </tr>
         <tr>
-          <td className="flex flex-wrap gap-1 pb-1 pt-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
+          <td className="flex flex-wrap gap-1 pb-1 pt-1 text-xs sm:text-sm md:text-base lg:text-lg">
             {run.type === 'Backyard' && (
             <>
               <Tag>{run.type}</Tag>
