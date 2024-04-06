@@ -5,7 +5,7 @@ import Tag from '../common/Tag';
 import Button from '../common/Button';
 
 const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run }) => (
-  <div key={index} className="w-full p-4 pb-0 border-PRIMARY sm:w-1/2 lg:w-1/3 text-PRIMARY font-extralight">
+  <div key={index} className="w-full p-4 pb-0 border-PRIMARY sm:w-1/2 lg:w-1/3 text-PRIMARY">
     <table className="w-full text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-left divide-y table-fixed divide-PRIMARY">
       <thead>
         <tr>
