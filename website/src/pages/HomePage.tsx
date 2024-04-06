@@ -8,7 +8,7 @@ import About from '../components/About';
 import MainLinkList from '../components/mainLinkList/MainLinkList';
 
 const HomePage: FC<{ tab: RouteName }> = ({ tab }) => (
-  <div className="flex justify-center w-full">
+  <div className="flex justify-center w-full pb-16">
     <div className="w-full">
       <div className="flex flex-row flex-wrap items-start h-auto gap-4 justify-between p-4">
         <h1 className="text-PRIMARY font-bold text-lg sm:text-2xl">

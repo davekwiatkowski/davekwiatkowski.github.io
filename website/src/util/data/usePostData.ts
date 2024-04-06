@@ -2,7 +2,16 @@ import { SanityAsset, SanityImageSource } from '@sanity/image-url/lib/types/type
 import useSanityFetch from '../useSanityFetch';
 
 export type PostImageData = SanityImageSource & {
-  asset: SanityAsset
+  asset: SanityAsset & {
+    metadata: {
+      palette: {
+        dominant: {
+          background: string;
+          foreground: string;
+        };
+      };
+    };
+  };
   caption?: string;
 };
 
@@ -25,7 +34,15 @@ const usePostData = (slug: string | undefined): IPostData | undefined => useSani
     mainImage{
       asset->{
         _id,
-        url
+        url,
+        metadata {
+          palette {
+            dominant {
+              background,
+              foreground,
+            }
+          }
+        }
       },
       crop,
       caption

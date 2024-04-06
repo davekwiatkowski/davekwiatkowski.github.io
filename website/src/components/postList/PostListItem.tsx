@@ -27,15 +27,13 @@ const PostListItem: FC<{ post: IPostListItemData; postNumber: number }> = ({ pos
           setIsHovering(false);
         }}
       >
-        <div className={`flex flex-row justify-between p-4 text-sm sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl ${isHovering && 'bg-HIGHLIGHT text-TEXT'} text-PRIMARY`}>
+        <div className={`flex flex-row justify-between p-4 text-sm sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl ${isHovering ? 'bg-HIGHLIGHT text-TEXT' : ''} text-PRIMARY`}>
           <div className="flex flex-row gap-2 items-center">
             <div className="text-xs">{postNumber}</div>
             <div className="font-bold">{title}</div>
             <div className="text-xs sm:text-base">{date}</div>
           </div>
-          {
-            isHovering && <ArrowUpRightIcon className="w-[16px] sm:w-[32px] md:w-[40px]" />
-          }
+          <ArrowUpRightIcon className={`w-[16px] sm:w-[32px] md:w-[40px] ${isHovering ? 'rotate-45' : 'rotate-0'} transition-transform`} />
         </div>
       </Link>
     </div>

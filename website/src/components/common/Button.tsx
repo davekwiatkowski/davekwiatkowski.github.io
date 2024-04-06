@@ -1,5 +1,7 @@
 import ArrowUpRightIcon from '@heroicons/react/24/outline/ArrowUpRightIcon';
-import { FC, useState } from 'react';
+import { FC, useMemo, useState } from 'react';
+
+const LinkIcon:FC<{ isHovering?: boolean }> = ({ isHovering }) => <ArrowUpRightIcon className={`transition-transform ${isHovering ? 'rotate-45' : 'rotate-0'}`} width={18} />;
 
 const Button: FC<{
   href?: string;
@@ -8,6 +10,9 @@ const Button: FC<{
   hasLinkIcon?: boolean;
   className?: string;
   isFullWidth?: boolean;
+  isSamePage?: boolean;
+  onClick?: (event: any) => void;
+  color?: string;
 }> = ({
   highlight,
   href,
@@ -15,27 +20,64 @@ const Button: FC<{
   hasLinkIcon,
   className = '',
   isFullWidth,
+  isSamePage = false,
+  onClick,
+  color,
 }) => {
   const [isHovering, setIsHovering] = useState(false);
+  const mainClassName = useMemo(() => `
+    items-center cursor-pointer whitespace-nowrap border-b border-dashed inline-flex gap-1
+    ${highlight ? 'font-bold' : ''} 
+    ${isFullWidth ? 'w-full justify-between' : ''}
+    ${className}
+    ${color ? '' : 'border-LINK'}
+    ${isHovering ? 'bg-HIGHLIGHT text-TEXT' : ''}
+    ${!color && !isHovering ? 'text-LINK' : ''}
+  `, [className, color, highlight, isFullWidth, isHovering]);
+  const style = useMemo(() => ({ color: isHovering ? undefined : color, borderColor: color }), [color, isHovering]);
 
   return (
-    <a
-      className={`${
-        highlight ? 'font-bold' : ''
-      } ${isFullWidth && 'w-full justify-between'} whitespace-nowrap hover:text-LINK_HOVER text-LINK transition-opacity inline-flex gap-1 ${className}}`}
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      onMouseEnter={() => {
-        setIsHovering(true);
-      }}
-      onMouseLeave={() => {
-        setIsHovering(false);
-      }}
-    >
-      {children}
-      {hasLinkIcon && <ArrowUpRightIcon className={`transition-transform ${isHovering ? 'rotate-45' : 'rotate-0'}`} width={18} />}
-    </a>
+    <>
+      {
+        href && (
+          <a
+            className={mainClassName}
+            href={href}
+            target={isSamePage ? undefined : '_blank'}
+            rel="noreferrer"
+            onMouseEnter={() => {
+              setIsHovering(true);
+            }}
+            onMouseLeave={() => {
+              setIsHovering(false);
+            }}
+            style={style}
+          >
+            {children}
+            {hasLinkIcon && <LinkIcon isHovering={isHovering} />}
+          </a>
+        )
+      }
+      {
+        !href && (
+          <button
+            className={mainClassName}
+            type="button"
+            onClick={onClick}
+            onMouseEnter={() => {
+              setIsHovering(true);
+            }}
+            onMouseLeave={() => {
+              setIsHovering(false);
+            }}
+            style={style}
+          >
+            {children}
+            {hasLinkIcon && <LinkIcon isHovering={isHovering} />}
+          </button>
+        )
+      }
+    </>
   );
 };
 

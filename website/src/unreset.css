@@ -2,10 +2,6 @@
   @apply my-4;
 }
 
-.unreset a {
-  @apply text-LINK underline hover:text-LINK_HOVER;
-}
-
 .unreset ul,
 menu {
   @apply pl-5 my-4 list-disc;

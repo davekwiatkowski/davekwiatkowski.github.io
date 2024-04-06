@@ -5,6 +5,8 @@ import Image from './common/Image';
 import getUrlFor from '../util/getUrlFor';
 import LoadingSignal from './common/LoadingSignal';
 import sanityClient from '../constants/sanityClient';
+import BlockContentLink from './blockContent/BlockContentLink';
+import BlockContentImage from './blockContent/BlockContentImage';
 
 const About: FC = () => {
   const aboutData = useAboutData();
@@ -30,6 +32,14 @@ const About: FC = () => {
               blocks={aboutData.text}
               projectId={sanityConfig.projectId}
               dataset={sanityConfig.dataset}
+              serializers={{
+                marks: {
+                  link: BlockContentLink,
+                },
+                types: {
+                  image: BlockContentImage,
+                },
+              }}
             />
           </div>
         </div>
