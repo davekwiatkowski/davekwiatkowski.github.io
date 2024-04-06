@@ -29,7 +29,7 @@ const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run 
           <td>{`${run.course}`}</td>
         </tr>
         <tr>
-          <td className="flex flex-wrap gap-1 pb-2 pt-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
+          <td className="flex flex-wrap gap-1 pb-1 pt-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
             {run.type === 'Backyard' && (
             <>
               <Tag>{run.type}</Tag>
