@@ -3,7 +3,7 @@ import {
 } from 'react';
 
 const Image: FC<{ src: string, alt: string, className?: string, endingOpacity?: number, style?: React.CSSProperties }> = ({
-  src, alt, className, endingOpacity = 1, style,
+  src, alt, className = '', endingOpacity = 1, style,
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
