@@ -13,6 +13,7 @@ import RouteName from '../constants/Route';
 import Button from '../components/common/Button';
 import CustomBlockContent from '../components/blockContent/CustomBlockContent';
 import ScrollProgress from '../components/common/ScrollProgress';
+import MainFooter from '../components/common/MainFooter';
 
 const PostPage: FC = () => {
   const { slug } = useParams();
@@ -51,7 +52,7 @@ const PostPage: FC = () => {
               </div>
             </BrowserView>
           </ScrollProgress>
-          <div className="w-full flex flex-col items-center pb-16">
+          <div className="w-full flex flex-col items-center pb-8">
             <div
               ref={ref}
               className="w-full flex flex-col items-center"
@@ -105,6 +106,7 @@ const PostPage: FC = () => {
               </div>
             </div>
           </div>
+          <MainFooter />
         </>
       )}
       {!postData && <LoadingSignal />}

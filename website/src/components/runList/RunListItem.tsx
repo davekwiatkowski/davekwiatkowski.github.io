@@ -5,16 +5,16 @@ import Tag from '../common/Tag';
 import Button from '../common/Button';
 
 const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run }) => (
-  <div key={index} className="w-full p-4 pb-0 border-PRIMARY sm:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5 text-PRIMARY">
-    <table className="w-full text-sm sm:text-base md:text-lg lg:text-xl text-left divide-y table-fixed divide-PRIMARY">
+  <div key={index} className="w-full p-8 pb-4 sm:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5 text-TEXT_DE_EMP">
+    <table className="w-full text-sm sm:text-base md:text-lg lg:text-xl text-left table-fixed divide-TEXT_DE_EMP">
       <thead>
         <tr>
-          <th className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal">
+          <th className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-TEXT">
             {index.toString().padStart(3, '0')}
           </th>
         </tr>
       </thead>
-      <tbody className="divide-y divide-PRIMARY">
+      <tbody className="divide-y divide-TEXT_DE_EMP">
         <tr>
           <td>
             {run.date}

@@ -12,7 +12,7 @@ const About: FC = () => {
     <div className="w-full flex items-center justify-center">
       {!aboutData && <LoadingSignal />}
       {aboutData && (
-      <div className="max-w-screen-2xl flex flex-row flex-wrap items-top justify-center p-4 gap-4">
+      <div className="max-w-screen-2xl flex flex-row flex-wrap items-top justify-center p-8 gap-4">
         {aboutData.mainImage && (
           <Image
             src={getUrlFor(aboutData.mainImage).url()}
@@ -21,8 +21,8 @@ const About: FC = () => {
           />
         )}
         <div className="w-full lg:w-[calc(50%-8px)]">
-          <div className="font-bold text-xl md:text-5xl xl:text-6xl text-PRIMARY">{aboutData.title}</div>
-          <div className="md:text-3xl xl:text-4xl text-justify font-extralight text-PRIMARY">
+          <div className="font-bold text-base md:text-3xl xl:text-4xl text-TEXT">{aboutData.title}</div>
+          <div className="md:text-xl xl:text-2xl text-TEXT_DE_EMP">
             <CustomBlockContent blocks={aboutData.text} />
           </div>
         </div>

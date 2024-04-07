@@ -6,7 +6,7 @@
 
 html,
 body {
-  @apply font-sans text-TEXT bg-BG;
+  @apply font-MAIN text-TEXT bg-BG;
 }
 
 body::-webkit-scrollbar {

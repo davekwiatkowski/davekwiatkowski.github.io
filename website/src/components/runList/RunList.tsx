@@ -7,7 +7,7 @@ const RunList: FC = () => {
   const runListData = useRunListData();
 
   return (
-    <div className="flex flex-row flex-wrap w-full">
+    <div className="flex flex-row flex-wrap w-full pb-4">
       {runListData ? (
         runListData
           .sort(
