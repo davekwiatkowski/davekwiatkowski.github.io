@@ -13,7 +13,7 @@ const Tabs: FC<{ children: ReactElement[], activeTab: RouteName }> = ({ children
   }, [navigate]);
 
   return (
-    <div>
+    <div className="w-full max-w-screen-2xl">
       <div className="flex gap-4 p-4">
         {children?.map((child) => {
           const { label } = child.props;

@@ -2,14 +2,27 @@ import {
   FC, useCallback, useState,
 } from 'react';
 
-const Image: FC<{ src: string, alt: string, className?: string, endingOpacity?: number, style?: React.CSSProperties }> = ({
-  src, alt, className = '', endingOpacity = 1, style,
+const Image: FC<{
+  src: string,
+  alt: string,
+  className?: string,
+  endingOpacity?: number,
+  style?: React.CSSProperties
+  onImageLoad?: () => void;
+}> = ({
+  src,
+  alt,
+  className = '',
+  endingOpacity = 1,
+  style,
+  onImageLoad,
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const onLoad = useCallback(() => {
     setIsLoaded(true);
-  }, []);
+    onImageLoad?.();
+  }, [onImageLoad]);
 
   return (
     <img

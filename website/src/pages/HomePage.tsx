@@ -9,8 +9,8 @@ import MainLinkList from '../components/mainLinkList/MainLinkList';
 
 const HomePage: FC<{ tab: RouteName }> = ({ tab }) => (
   <div className="flex justify-center w-full pb-16">
-    <div className="w-full">
-      <div className="flex flex-row flex-wrap items-start h-auto gap-4 justify-between p-4">
+    <div className="w-full flex items-center justify-center flex-col">
+      <div className="flex flex-row flex-wrap items-start h-auto gap-4 justify-between p-4 max-w-screen-2xl w-full">
         <h1 className="text-PRIMARY font-bold text-lg sm:text-2xl">
           Dave Kwiatkowski
         </h1>
