@@ -28,7 +28,7 @@ const PostListItem: FC<{ post: IPostListItemData; postNumber: number }> = ({ pos
     >
       <Image
         className={`
-          w-full h-full object-cover grayscale rounded-xl transition
+          w-full h-full object-cover grayscale rounded-xl transition-all
           ${isHovering || isMobile ? 'scale-125 contrast-100' : 'scale-100 contrast-200'}
         `}
         src={getUrlFor(mainImage).url()}
@@ -42,7 +42,7 @@ const PostListItem: FC<{ post: IPostListItemData; postNumber: number }> = ({ pos
       />
       <div className="absolute top-4 left-4 w-[calc(100%-32px)] h-[calc(100%-32px)]">
         <div className={`
-          absolute top-0 left-0 flex flex-row w-full justify-between transition items-baseline
+          absolute top-0 left-0 flex flex-row w-full justify-between transition-all items-baseline
           ${isHovering || isMobile ? 'translate-y-0 opacity-100 text-TEXT' : 'translate-y-[-40px] opacity-0 text-BG'}
         `}
         >
@@ -50,7 +50,7 @@ const PostListItem: FC<{ post: IPostListItemData; postNumber: number }> = ({ pos
           <div>{postNumber}</div>
         </div>
         <div className={`
-          absolute bottom-0 left-0 transition
+          absolute bottom-0 left-0 transition-all
           ${isHovering || isMobile ? 'translate-y-0 opacity-100 text-TEXT' : 'translate-y-[40px] opacity-0 text-BG'}
         `}
         >
