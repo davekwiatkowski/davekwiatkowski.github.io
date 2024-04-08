@@ -7,7 +7,7 @@ const PostList: FC = () => {
   const postListData = usePostListData();
 
   return (
-    <div className="w-full pt-4 p-8">
+    <div className="w-full pt-8 p-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
       {postListData ? (
         postListData
           .sort(

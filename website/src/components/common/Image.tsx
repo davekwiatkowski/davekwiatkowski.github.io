@@ -29,7 +29,10 @@ const Image: FC<{
       src={src}
       onLoad={onLoad}
       alt={alt}
-      className={`${className} transition-opacity duration-200`}
+      className={`
+        ${className ?? ''} 
+        transition-opacity duration-200
+      `}
       style={{ ...(style || {}), opacity: isLoaded ? endingOpacity : 0 }}
     />
   );

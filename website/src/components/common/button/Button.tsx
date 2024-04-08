@@ -1,15 +1,5 @@
-import ArrowUpRightIcon from '@heroicons/react/24/outline/ArrowUpRightIcon';
 import { FC, useMemo, useState } from 'react';
-
-const LinkIcon:FC<{ isHovering?: boolean }> = ({ isHovering }) => (
-  <ArrowUpRightIcon
-    className={`
-      transition-transform 
-      ${isHovering ? 'rotate-45' : 'rotate-0'}
-    `}
-    width={18}
-  />
-);
+import LinkIcon from './LinkIcon';
 
 const Button: FC<{
   href?: string;
@@ -37,7 +27,7 @@ const Button: FC<{
     items-center cursor-pointer whitespace-nowrap border-b border-dashed inline-flex gap-1
     ${highlight ? 'font-bold' : ''} 
     ${isFullWidth ? 'w-full justify-between' : ''}
-    ${className}
+    ${className ?? ''} 
     ${color ? '' : 'border-LINK'}
     ${isHovering ? 'bg-HIGHLIGHT text-TEXT' : ''}
     ${!color && !isHovering ? 'text-LINK' : ''}

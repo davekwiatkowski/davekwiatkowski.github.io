@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { BrowserView, MobileView } from 'react-device-detect';
 import PostList from '../components/postList/PostList';
 import RunList from '../components/runList/RunList';
 import Tabs from '../components/common/tabs/Tabs';
@@ -7,7 +6,6 @@ import Tab from '../components/common/tabs/Tab';
 import RouteName from '../constants/Route';
 import About from '../components/About';
 import MainLinkList from '../components/mainLinkList/MainLinkList';
-import MainFooter from '../components/common/MainFooter';
 
 const HomePage: FC<{ tab: RouteName }> = ({ tab }) => (
   <div className="flex justify-center w-full">
@@ -16,9 +14,7 @@ const HomePage: FC<{ tab: RouteName }> = ({ tab }) => (
         <h1 className="text-PRIMARY font-bold text-lg sm:text-2xl">
           Dave Kwiatkowski
         </h1>
-        <BrowserView>
-          <MainLinkList />
-        </BrowserView>
+        <MainLinkList />
       </div>
       <Tabs activeTab={tab}>
         <Tab label={RouteName.About}>
@@ -31,9 +27,6 @@ const HomePage: FC<{ tab: RouteName }> = ({ tab }) => (
           <RunList />
         </Tab>
       </Tabs>
-      <MobileView>
-        <MainFooter />
-      </MobileView>
     </div>
   </div>
 );

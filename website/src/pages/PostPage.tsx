@@ -10,10 +10,9 @@ import getUrlFor from '../util/getUrlFor';
 import usePostData from '../util/data/usePostData';
 import Image from '../components/common/Image';
 import RouteName from '../constants/Route';
-import Button from '../components/common/Button';
-import CustomBlockContent from '../components/blockContent/CustomBlockContent';
+import Button from '../components/common/button/Button';
+import CustomBlockContent from '../components/common/blockContent/CustomBlockContent';
 import ScrollProgress from '../components/common/ScrollProgress';
-import MainFooter from '../components/common/MainFooter';
 
 const PostPage: FC = () => {
   const { slug } = useParams();
@@ -46,8 +45,12 @@ const PostPage: FC = () => {
             <BrowserView>
               <div className="border-b border-TEXT_DE_EMP bg-BG flex justify-center items-center w-full">
                 <div className="flex flex-row gap-1 text-sm p-4 max-w-screen-2xl grow">
-                  <div className="text-TEXT_DE_EMP">Reading:</div>
-                  <div>{postData.title}</div>
+                  <div className="text-TEXT_DE_EMP">
+                    Reading:
+                  </div>
+                  <div>
+                    {postData.title}
+                  </div>
                 </div>
               </div>
             </BrowserView>
@@ -93,20 +96,25 @@ const PostPage: FC = () => {
               <div className="flex-1 flex flex-col gap-4">
                 <div>
                   <div>Published:</div>
-                  <div className="text-TEXT_DE_EMP whitespace-nowrap">{new Date(postData.publishedAt).toDateString()}</div>
+                  <div className="text-TEXT_DE_EMP whitespace-nowrap">
+                    {new Date(postData.publishedAt).toDateString()}
+                  </div>
                 </div>
                 <div>
                   <div>Author:</div>
-                  <div className="text-TEXT_DE_EMP whitespace-nowrap">Dave Kwiatkowski</div>
+                  <div className="text-TEXT_DE_EMP whitespace-nowrap">
+                    Dave Kwiatkowski
+                  </div>
                 </div>
               </div>
               <div className="unreset max-w-2xl mt-[-16px]">
                 <CustomBlockContent blocks={postData.body} />
-                <Button hasLinkIcon onClick={handleClose}> Read more by Dave Kwiatkowski</Button>
+                <Button hasLinkIcon onClick={handleClose}>
+                  Read more by Dave Kwiatkowski
+                </Button>
               </div>
             </div>
           </div>
-          <MainFooter />
         </>
       )}
       {!postData && <LoadingSignal />}

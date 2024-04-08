@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { IRunListItemData } from '../../util/data/useRunListData';
 import toOrdinal from '../../util/toOrdinal';
 import Tag from '../common/Tag';
-import Button from '../common/Button';
+import Button from '../common/button/Button';
 
 const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run }) => (
   <div key={index} className="w-full p-8 pb-4 sm:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5 text-TEXT_DE_EMP">
@@ -26,34 +26,50 @@ const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run 
           </td>
         </tr>
         <tr>
-          <td>{`${run.course}`}</td>
+          <td>
+            {`${run.course}`}
+          </td>
         </tr>
         <tr>
           <td className="flex flex-wrap gap-1 pb-1 pt-1 text-xs sm:text-sm md:text-base lg:text-lg">
             {run.type === 'Backyard' && (
-            <>
-              <Tag>{run.type}</Tag>
-              <Tag>
-                {run.backyard?.yards}
-                yds
-              </Tag>
-              <Tag>{run.backyard?.place}</Tag>
-            </>
+              <>
+                <Tag>
+                  {run.type}
+                </Tag>
+                <Tag>
+                  {run.backyard?.yards}
+                  yds
+                </Tag>
+                <Tag>
+                  {run.backyard?.place}
+                </Tag>
+              </>
             )}
             {run.type === 'FKT' && (
-            <>
-              <Tag>{run.type}</Tag>
-              <Tag>{run.fkt?.type}</Tag>
-            </>
+              <>
+                <Tag>
+                  {run.type}
+                </Tag>
+                <Tag>
+                  {run.fkt?.type}
+                </Tag>
+              </>
             )}
             {run.type === 'Race' && (
-            <>
-              <Tag>{run.type}</Tag>
-              <Tag>{toOrdinal(run.race?.place)}</Tag>
-            </>
+              <>
+                <Tag>
+                  {run.type}
+                </Tag>
+                <Tag>
+                  {toOrdinal(run.race?.place)}
+                </Tag>
+              </>
             )}
             {run.type === 'Adventure' && (
-              <Tag>{run.type}</Tag>
+              <Tag>
+                {run.type}
+              </Tag>
             )}
           </td>
         </tr>
@@ -74,7 +90,9 @@ const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run 
         </tr>
         <tr>
           <td>
-            <Button href={run.link} hasLinkIcon>See result</Button>
+            <Button href={run.link} hasLinkIcon>
+              See result
+            </Button>
           </td>
         </tr>
       </tbody>
