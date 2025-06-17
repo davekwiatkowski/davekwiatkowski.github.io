@@ -1,11 +1,12 @@
 import { FC } from 'react';
-import PostList from '../components/postList/PostList';
 import RunList from '../components/runList/RunList';
 import Tabs from '../components/common/tabs/Tabs';
 import Tab from '../components/common/tabs/Tab';
 import RouteName from '../constants/Route';
 import About from '../components/About';
 import MainLinkList from '../components/mainLinkList/MainLinkList';
+import Redirect from '../components/common/Redirect';
+import urlConstants from '../constants/urlConstants';
 
 const HomePage: FC<{ tab: RouteName }> = ({ tab }) => (
   <div className="flex justify-center w-full">
@@ -20,8 +21,8 @@ const HomePage: FC<{ tab: RouteName }> = ({ tab }) => (
         <Tab label={RouteName.About}>
           <About />
         </Tab>
-        <Tab label={RouteName.Blog}>
-          <PostList />
+        <Tab label={RouteName.Blog} onClick={() => { window.location.href = urlConstants.BLOG_SITE; }}>
+          <Redirect url={urlConstants.BLOG_SITE} />
         </Tab>
         <Tab label={RouteName.Runs}>
           <RunList />
