@@ -1,0 +1,48 @@
+# Dave Kwiatkowski — Full Site Content
+
+> Runner, writer, and software engineer.
+
+## About
+
+Dave Kwiatkowski is an ultra-runner, writer, and software engineer. He writes on his Substack at https://davekwiatkowski.substack.com, covering topics on running, life, and adventure. His personal website showcases his biography, latest writing, and a comprehensive log of his ultra-running career.
+
+## Site Pages
+
+### About (https://davekwiatkowski.com/#/about)
+The main landing page featuring Dave's biography, a personal photo, and links to his latest writing. Content is managed via Sanity CMS.
+
+### Blog (https://davekwiatkowski.com/#/blog)
+Displays the latest posts from Dave's Substack newsletter. Posts are fetched from the Substack RSS feed. Topics include ultra-running race reports, training reflections, and personal essays.
+
+Full blog archive: https://davekwiatkowski.substack.com
+
+### Runs (https://davekwiatkowski.com/#/runs)
+A complete, sortable log of Dave's ultra-running events. Each entry includes:
+- **Date** — when the event took place
+- **Course** — name of the race or route
+- **Location** — city/state/country
+- **Distance** — in miles or kilometers
+- **Duration** — days, hours, minutes, seconds
+- **Type** — one of: Race, Backyard (ultra), FKT (Fastest Known Time), or Adventure
+- **Result** — placement for races, yards completed for backyard ultras, or FKT support type (supported, self-supported, unsupported)
+
+Event types explained:
+- **Race**: Organized ultra-running events with placement results (1st, 2nd, etc.)
+- **Backyard Ultra**: Last-person-standing format where runners complete 4.167-mile yards every hour. Results include yards completed and outcome (Win, Assist, DNF).
+- **FKT (Fastest Known Time)**: Attempts to set the fastest time on a defined route. Categorized by support level — Supported, Self-supported, or Unsupported.
+- **Adventure**: Self-directed ultra-running adventures outside of organized events.
+
+## Links
+
+- Website: https://davekwiatkowski.com
+- Blog: https://davekwiatkowski.substack.com
+- Blog RSS feed: https://davekwiatkowski.substack.com/feed
+- LLM-friendly summary: https://davekwiatkowski.com/llms.txt
+
+## Technical Details
+
+This is a single-page React application using HashRouter. Content is loaded dynamically from Sanity CMS (biography, runs) and Substack RSS (blog posts). AI crawlers that cannot execute JavaScript should use this file or llms.txt for site content.
+
+## Contact
+
+For the most current information, visit https://davekwiatkowski.com or https://davekwiatkowski.substack.com.
