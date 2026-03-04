@@ -1,0 +1,23 @@
+# Dave Kwiatkowski
+
+> Runner, writer, and software engineer.
+
+## About
+
+Dave Kwiatkowski is a runner, writer, and software engineer. He writes on his Substack at https://davekwiatkowski.substack.com.
+
+## Site Structure
+
+- / — About page with biography, photo, and latest writing
+- /#/about — About page
+- /#/blog — Redirects to Substack blog
+- /#/runs — Race results and ultra-running log
+
+## Links
+
+- Blog: https://davekwiatkowski.substack.com
+- Website: https://davekwiatkowski.com
+
+## Content
+
+This is a personal website built with React. The About section contains a biography and links to recent Substack posts. The Runs section contains a log of ultra-running races, adventures, and FKTs (Fastest Known Times) with dates, locations, distances, durations, and results.

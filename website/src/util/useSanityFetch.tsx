@@ -23,12 +23,10 @@ const useSanityFetch = (
     }
   }, [data?.length, navigate]);
 
-  const result = useMemo(
+  return useMemo(
     () => (isOneResult ? data?.[0] : data),
     [data, isOneResult],
   );
-
-  return useMemo(() => result, [result]);
 };
 
 export default useSanityFetch;

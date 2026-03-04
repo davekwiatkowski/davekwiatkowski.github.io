@@ -4,10 +4,10 @@ import { FC } from 'react';
 const LinkIcon: FC<{ isHovering?: boolean }> = ({ isHovering }) => (
   <ArrowUpRightIcon
     className={`
-      transition-transform 
-      ${isHovering ? 'rotate-45' : 'rotate-0'}
+      transition-transform duration-200
+      ${isHovering ? 'translate-x-0.5 -translate-y-0.5' : ''}
     `}
-    width={18}
+    width={14}
   />
 );
 

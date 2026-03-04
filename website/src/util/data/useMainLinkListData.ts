@@ -1,6 +1,6 @@
 import useSanityFetch from '../useSanityFetch';
 
-export interface IMainLinkItemData {
+interface IMainLinkItemData {
   title: string;
   url: string;
 }

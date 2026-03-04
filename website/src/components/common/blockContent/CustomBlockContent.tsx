@@ -9,7 +9,7 @@ const CustomBlockContent: FC<{ blocks: any }> = ({ blocks }) => {
 
   return (
     <BlockContent
-      className="unreset text-justify"
+      className="unreset leading-relaxed"
       blocks={blocks}
       projectId={sanityConfig.projectId}
       dataset={sanityConfig.dataset}

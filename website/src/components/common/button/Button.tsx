@@ -24,13 +24,14 @@ const Button: FC<{
 }) => {
   const [isHovering, setIsHovering] = useState(false);
   const mainClassName = useMemo(() => `
-    items-center cursor-pointer whitespace-nowrap border-b border-dashed inline-flex gap-1
-    ${highlight ? 'font-bold' : ''} 
+    items-center cursor-pointer whitespace-nowrap border-b inline-flex gap-1
+    transition-all duration-200 ease-out
+    ${highlight ? 'font-medium' : ''} 
     ${isFullWidth ? 'w-full justify-between' : ''}
-    ${className ?? ''} 
-    ${color ? '' : 'border-LINK'}
-    ${isHovering ? 'bg-HIGHLIGHT text-TEXT' : ''}
-    ${!color && !isHovering ? 'text-LINK' : ''}
+    ${className} 
+    ${color ? '' : 'border-PRIMARY/40'}
+    ${isHovering ? 'border-PRIMARY text-TEXT' : ''}
+    ${!color && !isHovering ? 'text-PRIMARY' : ''}
   `, [className, color, highlight, isFullWidth, isHovering]);
   const style = useMemo(() => ({ color: isHovering ? undefined : color, borderColor: color }), [color, isHovering]);
 

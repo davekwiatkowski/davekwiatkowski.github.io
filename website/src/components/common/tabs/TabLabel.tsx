@@ -1,34 +1,33 @@
-import { FC, useCallback, useState } from 'react';
+import { FC, useCallback } from 'react';
 
 const TabLabel: FC<{
   label: string;
   activeTab: string;
   onClick: (tab: string) => void;
 }> = ({ label, activeTab, onClick }) => {
-  const [isHovering, setIsHovering] = useState(false);
   const handleClick = useCallback(() => onClick(label), [label, onClick]);
+  const isActive = label === activeTab;
 
   return (
-    <div
+    <button
+      type="button"
+      role="tab"
+      id={`tab-${label}`}
+      aria-selected={isActive}
+      aria-controls={`tabpanel-${label}`}
+      tabIndex={isActive ? 0 : -1}
       className={`
-      cursor-pointer select-none capitalize pt-1 pb-1 pl-2 pr-2 border
-      ${
-        label === activeTab
-          ? 'text-BG bg-TEXT border-TEXT'
-          : 'text-TEXT_DE_EMP border-TEXT_DE_EMP'
-      }
-      ${isHovering ? 'bg-HIGHLIGHT' : ''}
+        cursor-pointer select-none capitalize text-sm font-medium tracking-wide whitespace-nowrap
+        pb-3 border-b-2 transition-all duration-300 ease-out min-h-[44px]
+        ${isActive
+        ? 'text-TEXT border-PRIMARY'
+        : 'text-TEXT_DE_EMP border-transparent hover:text-TEXT hover:border-BORDER'
+        }
       `}
       onClick={handleClick}
-      onMouseEnter={() => {
-        setIsHovering(true);
-      }}
-      onMouseLeave={() => {
-        setIsHovering(false);
-      }}
     >
       {label}
-    </div>
+    </button>
   );
 };
 

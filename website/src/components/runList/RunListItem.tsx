@@ -1,103 +1,79 @@
 import { FC } from 'react';
-import { IRunListItemData } from '../../util/data/useRunListData';
+import IRunListItemData from '../../util/data/IRunListItemData';
 import toOrdinal from '../../util/toOrdinal';
 import Tag from '../common/Tag';
 import Button from '../common/button/Button';
+import Marquee from '../common/Marquee';
+
+const formatDuration = (d: IRunListItemData['duration']): string => `${d.days ? `${d.days}d ` : ''}${d.hours ? `${d.hours}h ` : ''}${d.minutes ? `${d.minutes}m ` : ''}${d.seconds ? `${d.seconds}s` : ''}`.trim();
 
 const RunListItem: FC<{ index: number; run: IRunListItemData }> = ({ index, run }) => (
-  <div key={index} className="w-full p-8 pb-4 sm:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5 text-TEXT_DE_EMP">
-    <table className="w-full text-sm sm:text-base md:text-lg lg:text-xl text-left table-fixed divide-TEXT_DE_EMP">
-      <thead>
-        <tr>
-          <th className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-TEXT">
-            {index.toString().padStart(3, '0')}
-          </th>
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-TEXT_DE_EMP">
-        <tr>
-          <td>
-            {run.date}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            {run.location}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            {`${run.course}`}
-          </td>
-        </tr>
-        <tr>
-          <td className="flex flex-wrap gap-1 pb-1 pt-1 text-xs sm:text-sm md:text-base lg:text-lg">
+  <article className="w-full px-4 py-3 sm:p-5 sm:px-8 border-b border-BORDER" role="listitem">
+    <div className="w-full text-sm text-left">
+      <div className="flex items-baseline gap-2 sm:block mb-1 sm:mb-3">
+        <div className="text-lg sm:text-5xl font-HEADING font-light text-TEXT tracking-tight" aria-hidden="true">
+          {index.toString().padStart(3, '0')}
+        </div>
+        <Marquee className="text-xs uppercase tracking-widest font-medium text-TEXT_DE_EMP sm:hidden">
+          <time>{run.date}</time>
+        </Marquee>
+      </div>
+      <div className="space-y-0.5 sm:space-y-1.5 text-TEXT_DE_EMP overflow-hidden">
+        <Marquee className="text-xs uppercase tracking-widest font-medium text-TEXT_DE_EMP hidden sm:block">
+          <time>{run.date}</time>
+        </Marquee>
+        <Marquee className="text-sm sm:text-base text-TEXT font-medium">
+          {run.course}
+        </Marquee>
+        <Marquee className="text-xs sm:text-sm">
+          {run.location}
+        </Marquee>
+        <Marquee className="py-0.5">
+          <div className="flex flex-nowrap gap-1.5" role="list" aria-label="Tags">
             {run.type === 'Backyard' && (
               <>
-                <Tag>
-                  {run.type}
-                </Tag>
+                <Tag>{run.type}</Tag>
                 <Tag>
                   {run.backyard?.yards}
-                  yds
+                  {' yds'}
                 </Tag>
-                <Tag>
-                  {run.backyard?.place}
-                </Tag>
+                <Tag>{run.backyard?.place}</Tag>
               </>
             )}
             {run.type === 'FKT' && (
               <>
-                <Tag>
-                  {run.type}
-                </Tag>
-                <Tag>
-                  {run.fkt?.type}
-                </Tag>
+                <Tag>{run.type}</Tag>
+                <Tag>{run.fkt?.type}</Tag>
               </>
             )}
             {run.type === 'Race' && (
               <>
-                <Tag>
-                  {run.type}
-                </Tag>
-                <Tag>
-                  {toOrdinal(run.race?.place)}
-                </Tag>
+                <Tag>{run.type}</Tag>
+                <Tag>{toOrdinal(run.race?.place)}</Tag>
               </>
             )}
             {run.type === 'Adventure' && (
-              <Tag>
-                {run.type}
-              </Tag>
+              <Tag>{run.type}</Tag>
             )}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            {`${run.distance.amount} ${run.distance.unit}`}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            {`
-              ${run.duration.days ? `${run.duration.days}d` : ''}
-              ${run.duration.hours ? `${run.duration.hours}h` : ''}
-              ${run.duration.minutes ? `${run.duration.minutes}m` : ''}
-              ${run.duration.seconds ? `${run.duration.seconds}s` : ''}
-            `}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <Button href={run.link} hasLinkIcon>
-              See result
-            </Button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+          </div>
+        </Marquee>
+        <Marquee className="text-xs sm:text-sm sm:hidden">
+          {`${run.distance.amount} ${run.distance.unit} · ${formatDuration(run.duration)}`}
+        </Marquee>
+        <Marquee className="text-xs sm:text-sm hidden sm:block">
+          {`${run.distance.amount} ${run.distance.unit}`}
+        </Marquee>
+        <Marquee className="text-xs sm:text-sm hidden sm:block">
+          {formatDuration(run.duration)}
+        </Marquee>
+        <div className="pt-0.5">
+          <Button href={run.link} hasLinkIcon>
+            See result
+          </Button>
+        </div>
+      </div>
+    </div>
+  </article>
 );
 
 export default RunListItem;

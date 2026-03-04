@@ -1,12 +1,12 @@
 import { SanityAsset, SanityImageSource } from '@sanity/image-url/lib/types/types';
 import useSanityFetch from '../useSanityFetch';
 
-export type AboutImageData = SanityImageSource & {
+type AboutImageData = SanityImageSource & {
   asset: SanityAsset
   caption?: string;
 };
 
-export interface IAboutData {
+interface IAboutData {
   title?: string;
   text?: string;
   mainImage?: AboutImageData;

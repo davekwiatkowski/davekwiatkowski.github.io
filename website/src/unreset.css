@@ -1,5 +1,5 @@
 .unreset p {
-  @apply my-4;
+  @apply my-5 leading-relaxed;
 }
 
 .unreset ul,
@@ -15,12 +15,14 @@ menu {
   @apply pl-5 my-4 list-decimal;
 }
 
-.unreset ol,
-ul {
-  list-style-type: circle;
+.unreset li {
+  @apply my-2;
 }
 
-.unreset ol,
-ul {
-  list-style-type: circle;
+.unreset h2 {
+  @apply text-2xl font-HEADING font-semibold mt-8 mb-4;
+}
+
+.unreset h3 {
+  @apply text-xl font-HEADING font-semibold mt-6 mb-3;
 }
