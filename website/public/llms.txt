@@ -2,7 +2,7 @@
 
 > Runner, writer, and software engineer.
 
-Dave Kwiatkowski is an ultra-runner, writer, and software engineer. He writes on his Substack at https://davekwiatkowski.substack.com and documents his ultra-running races, adventures, and Fastest Known Times (FKTs).
+Dave Kwiatkowski is an ultra-runner, software engineer, and creator of https://yardlore.com. He writes on his Substack at https://davekwiatkowski.substack.com and documents his ultra-running races, adventures, and Fastest Known Times (FKTs).
 
 ## Site Structure
 
